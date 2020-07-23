@@ -1,2 +1,1 @@
-# GameAI
-As the title suggest, we are making A.I with the mindset of OOP so this could be fun...
+AIEYear1Samples
