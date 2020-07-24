@@ -7,7 +7,7 @@ GameObject::GameObject()
 
 GameObject::~GameObject()
 {
-	delete m_behaviour;
+	
 }
 
 void GameObject::Update(float deltaTime)
@@ -93,6 +93,5 @@ void GameObject::ApplyForce(const Vector2& force)
 
 void GameObject::SetBehaviour(Behaviour* behaviour)
 {
-	delete m_behaviour;
 	m_behaviour = behaviour;
 }

@@ -24,7 +24,6 @@ private:
 	const char* m_windowTitle;
 
 	GameObject* m_player1 = nullptr;
-	GameObject* m_player2 = nullptr;
 
 };
 
