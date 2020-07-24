@@ -29,7 +29,7 @@
 int main(int argc, char* argv[])
 {
     {
-        Application app(800, 540);
+        Application app(800, 450, "Game AI");
         app.Run();
     }
 

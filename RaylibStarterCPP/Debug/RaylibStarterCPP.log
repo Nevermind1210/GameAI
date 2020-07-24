@@ -1,12 +1,13 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(459,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (RaylibStarterCPP.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(459,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (GameObjectExcercise.vcxproj, RaylibStarterCPP.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Application.cpp
   GameObject.cpp
-D:\GameAI\RaylibStarterCPP\GameObject.cpp(16,2): error C2065: 'ApplyForce': undeclared identifier
-D:\GameAI\RaylibStarterCPP\GameObject.cpp(16,26): error C2065: 'Vector2Negate': undeclared identifier
-D:\GameAI\RaylibStarterCPP\GameObject.cpp(16,13): error C3861: 'Vector2Scale': identifier not found
-D:\GameAI\RaylibStarterCPP\GameObject.cpp(17,1): error C2143: syntax error: missing ';' before '}'
-D:\GameAI\RaylibStarterCPP\GameObject.cpp(23,1): error C2059: syntax error: '}'
-D:\GameAI\RaylibStarterCPP\GameObject.cpp(23,1): error C2143: syntax error: missing ';' before '}'
+D:\GameAI\RaylibStarterCPP\srccpp\GameObject.cpp(40,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\GameAI\RaylibStarterCPP\srccpp\GameObject.cpp(40,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\GameAI\RaylibStarterCPP\srccpp\GameObject.cpp(43,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\GameAI\RaylibStarterCPP\srccpp\GameObject.cpp(43,16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\GameAI\RaylibStarterCPP\srccpp\GameObject.cpp(42,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\GameAI\RaylibStarterCPP\srccpp\GameObject.cpp(42,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  KeyboardBehaviour.cpp
   main.cpp
 D:\GameAI\Raygui\src\raygui.h(749,63): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
 D:\GameAI\Raygui\src\raygui.h(749,63): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
@@ -130,4 +131,6 @@ D:\GameAI\Raygui\src\raygui.h(3341,49): warning C4244: 'argument': conversion fr
 D:\GameAI\Raygui\src\raygui.h(3341,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 D:\GameAI\Raygui\src\raygui.h(3356,107): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\GameAI\Raygui\src\raygui.h(3356,74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SeekBehaviour.cpp
   Generating Code...
+  RaylibStarterCPP.vcxproj -> D:\GameAI\bin\Win32\Debug\GameAIKeyboardBehaviour.exe
