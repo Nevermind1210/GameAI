@@ -1,7 +1,9 @@
 #pragma once
 
 #include "GameObject.h"
-#include "KeyboardBehaviour.h"
+
+class KeyboardBehaviour;
+class SeekBehaviour;
 
 class Player : public GameObject
 {
@@ -14,6 +16,7 @@ public:
 protected:
 
 	KeyboardBehaviour* m_kbBehaviour;
+	SeekBehaviour* m_seekBehaviour;
 
 private:
 };

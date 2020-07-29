@@ -168,20 +168,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="srccpp\FollowPathBehaviour.cpp" />
     <ClCompile Include="srccpp\Application.cpp" />
+    <ClCompile Include="srccpp\FleeBehaviour.cpp" />
     <ClCompile Include="srccpp\GameObject.cpp" />
     <ClCompile Include="srccpp\KeyboardBehaviour.cpp" />
     <ClCompile Include="srccpp\main.cpp" />
     <ClCompile Include="srccpp\SeekBehaviour.cpp" />
     <ClCompile Include="srccpp\Player.cpp" />
+    <ClCompile Include="srccpp\WonderBehaviour.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Application.h" />
+    <ClInclude Include="inc\FollowPathBehaviour.h" />
     <ClInclude Include="inc\GameObject.h" />
     <ClInclude Include="inc\Behaviour.h" />
+    <ClInclude Include="inc\FleeBehaviour.h" />
     <ClInclude Include="inc\Player.h" />
     <ClInclude Include="inc\KeyboardBehaviour.h" />
     <ClInclude Include="inc\SeekBehaviour.h" />
+    <ClInclude Include="inc\WonderBehaviour.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
