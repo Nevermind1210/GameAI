@@ -168,9 +168,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="srccpp\FleeBehaviour.cpp" />
     <ClCompile Include="srccpp\FollowPathBehaviour.cpp" />
     <ClCompile Include="srccpp\Application.cpp" />
-    <ClCompile Include="srccpp\FleeBehaviour.cpp" />
     <ClCompile Include="srccpp\GameObject.cpp" />
     <ClCompile Include="srccpp\KeyboardBehaviour.cpp" />
     <ClCompile Include="srccpp\main.cpp" />
@@ -180,10 +180,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Application.h" />
+    <ClInclude Include="inc\FleeBehaviour.h" />
     <ClInclude Include="inc\FollowPathBehaviour.h" />
     <ClInclude Include="inc\GameObject.h" />
     <ClInclude Include="inc\Behaviour.h" />
-    <ClInclude Include="inc\FleeBehaviour.h" />
     <ClInclude Include="inc\Player.h" />
     <ClInclude Include="inc\KeyboardBehaviour.h" />
     <ClInclude Include="inc\SeekBehaviour.h" />

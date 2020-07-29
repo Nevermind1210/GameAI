@@ -30,6 +30,10 @@ void Player::Update(float deltaTime)
 		m_seekBehaviour->SetTarget(GetMousePosition() );
 		SetBehaviour(m_seekBehaviour);
 	}
+	if (IsKeyPressed(KEY_W) || IsKeyPressed(KEY_A) || IsKeyPressed(KEY_S) || IsKeyPressed(KEY_D))
+	{
+		SetBehaviour(m_kbBehaviour);
+	}
 
 	GameObject::Update(deltaTime);
 }
