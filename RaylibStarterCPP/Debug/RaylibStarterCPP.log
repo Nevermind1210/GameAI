@@ -1,2 +1,3 @@
-﻿  Player.cpp
-  RaylibStarterCPP.vcxproj -> C:\Users\s200501\Desktop\GameAI\bin\Win32\Debug\GameAI.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(459,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (GameAIKeyboardBehaviour.vcxproj, GameObjectExcercise.vcxproj, RaylibStarterCPP.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  FleeBehaviour.cpp
+  RaylibStarterCPP.vcxproj -> D:\GameAI\bin\Win32\Debug\GameAI.exe
