@@ -1,7 +1,6 @@
 #pragma once
 #include "raymath.h"
 #include "Behaviour.h"
-#define volatile
 
 
 class WonderBehaviour : public Behaviour
