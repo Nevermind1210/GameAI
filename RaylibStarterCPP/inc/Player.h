@@ -2,6 +2,7 @@
 
 #include "GameObject.h"
 
+class FleeBehaviour;
 class KeyboardBehaviour;
 class SeekBehaviour;
 
@@ -17,6 +18,7 @@ protected:
 
 	KeyboardBehaviour* m_kbBehaviour;
 	SeekBehaviour* m_seekBehaviour;
+	FleeBehaviour* m_fleeBehaviour;
 
 private:
 };

@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "KeyboardBehaviour.h"
 #include "SeekBehaviour.h"
+#include "FleeBehaviour.h"
 
 Player::Player()
 {
@@ -10,7 +11,8 @@ Player::Player()
 	m_seekBehaviour->OnArrive([this]() {
 		SetBehaviour(m_kbBehaviour);
 		});
-
+	m_fleeBehaviour = new FleeBehaviour();
+	m_fleeBehaviour->SetTargetRadius(100);
 	SetBehaviour(m_kbBehaviour);
 }
 
@@ -20,6 +22,7 @@ Player::~Player()
 
 	delete m_seekBehaviour;
 	delete m_kbBehaviour;
+	delete m_fleeBehaviour;
 }
 
 void Player::Update(float deltaTime)
@@ -30,6 +33,16 @@ void Player::Update(float deltaTime)
 		m_seekBehaviour->SetTarget(GetMousePosition() );
 		SetBehaviour(m_seekBehaviour);
 	}
+	if (IsKeyPressed(KEY_W) || IsKeyPressed(KEY_A) || IsKeyPressed(KEY_S) || IsKeyPressed(KEY_D))
+	{
+		SetBehaviour(m_kbBehaviour);
+	}
+	if (IsMouseButtonDown(1))//len was here
+	{
+		m_fleeBehaviour->SetTarget(GetMousePosition());
+		SetBehaviour(m_fleeBehaviour);
+	}
+
 
 	GameObject::Update(deltaTime);
 }
