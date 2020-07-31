@@ -58,7 +58,7 @@ void Application::Load()
 	{
 		for (int x = 0; x < numCols; x++)
 		{
-			m_graph->AddNodes({
+			m_graph->AddNode({
 				x * spacing + xOffSet,
 				y * spacing + yOFSet
 				});
@@ -79,7 +79,6 @@ void Application::Load()
 			m_graph->AddEdge(connectedNode, node, dist);
 		}
 	}
-
 
 	m_graphEditor = new Graph2DEditor();
 	m_graphEditor->SetGraph(m_graph);

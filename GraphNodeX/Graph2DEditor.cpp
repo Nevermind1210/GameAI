@@ -17,7 +17,7 @@ void Graph2DEditor::Update(float deltaTime)
 	{
 		auto mousePos = GetMousePosition();
 
-		auto newNode = m_graph->AddNodes(mousePos);
+		auto newNode = m_graph->AddNode(mousePos);
 
 		std::vector<Graph2D::Node*> nearbyNodes;
 		m_graph->GetNearbyNodes(mousePos, 60, nearbyNodes);

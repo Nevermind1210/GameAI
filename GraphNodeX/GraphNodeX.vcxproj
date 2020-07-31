@@ -183,6 +183,7 @@
     <ClInclude Include="Graph.h" />
     <ClInclude Include="Graph2D.h" />
     <ClInclude Include="Graph2DEditor.h" />
+    <ClInclude Include="Graph2DRenderer.h" />
     <ClInclude Include="KeyboardBehaviour.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SeekBehaviour.h" />

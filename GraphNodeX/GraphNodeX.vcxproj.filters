@@ -68,5 +68,8 @@
     <ClInclude Include="Graph2DEditor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Graph2DRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

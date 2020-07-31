@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <functional>
 
 template<class TNodeData, class TEdgeData>
 class Graph
@@ -22,6 +23,8 @@ public:
 		TEdgeData data;
 	};
 
+	
+
 public:
 	// Constructor!
 	Graph()
@@ -38,7 +41,7 @@ public:
 		m_nodes.clear();
 	}
 
-	Node* AddNodes(const TNodeData& data)
+	Node* AddNode(const TNodeData& data)
 	{
 		Node* node = new Node();
 		node->data = data;
@@ -50,6 +53,36 @@ public:
 	void AddEdge(Node* nodeA, Node* nodeB, const TEdgeData& data)
 	{
 		nodeA->connections.push_back({nodeB, data});
+	}
+
+	Node* ForEachBFS(Node* startNode, std::function<bool(Node * n)> process)
+	{
+		std::vector<Node*>stack;
+		std::vector<Node*>visted;
+		if (startNode == nullptr)
+		{
+			startNode = m_nodes[0];
+		}
+
+		while (stack.empty() == false)
+		{
+			Node* n = stack.back();
+			stack.pop_back();
+			visted.push_back(n);
+
+			process(n);
+
+			for (Edge& edge: n->connections)
+			{
+				bool isStack = std::find(stack.begin(), stack.end(), edge.to) != stack.end();
+				bool inVisted = std::find(visted.begin(), visted.end(), edge.to) != visted.end();
+				if (isStack || inVisted) {
+					continue;
+				}
+				stack.insert(stack.begin(), edge.to);
+			}
+		}
+		return nullptr;
 	}
 
 	const std::vector<Node*>& GetNodes()
