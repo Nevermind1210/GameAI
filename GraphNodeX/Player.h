@@ -3,7 +3,7 @@
 
 class FleeBehaviour;
 class KeyboardBehaviour;
-class SeekBehaviour;
+//class SeekBehaviour;
 
 class Player : public GameObject
 {
@@ -16,7 +16,7 @@ public:
 protected:
 
 	KeyboardBehaviour* m_kbBehaviour;
-	SeekBehaviour* m_seekBehaviour;
+	/*SeekBehaviour* m_seekBehaviour;*/
 	FleeBehaviour* m_fleeBehaviour;
 
 private:

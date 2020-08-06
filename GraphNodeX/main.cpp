@@ -62,13 +62,14 @@ void TestGraph()
     // This is a BFS traversal.
     // if the method returns true, the traversal will stop
     // if the method returns false, the traversal will continue
-    graph.ForEachBFS(f, [](Graph<char, int>::Node* node) {
+    graph.ForEachDFS(f, [](Graph<char, int>::Node* node) {
         std::cout << node->data << std::endl;
         return false;
         });
 
     system("pause");
 }
+
 
 int main(int argc, char* argv[])
 {
