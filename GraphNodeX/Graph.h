@@ -24,8 +24,6 @@ public:
 		TEdgeData data;
 	};
 
-	
-
 public:
 	// Constructor!
 	Graph()
@@ -88,7 +86,7 @@ public:
 
 	Node* ForEachDFS(Node* startNode, std::function<bool(Node * n)> process)
 	{
-		std::list<Node*>stack;
+		std::list<Node*>stack; 
 		std::list<Node*>visted;
 		if (startNode == nullptr)
 		{
