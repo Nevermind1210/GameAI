@@ -11,6 +11,22 @@ FollowPathBehaviour::~FollowPathBehaviour()
 
 }
 
+
+void FollowPathBehaviour::dijkstrasSearch(Node* startNode, const std::list<Node*>& endNodes, std::list<Node*>& outPath)
+{
+	int currentStep = 0;
+	std::list<Node*> openList; // open list is accessed as a queue
+	std::list<Node*> closedList;
+
+	Node* endNode = nullptr;
+
+	openList.push_back(startNode);
+
+	while (openList.empty() == false) {
+		openList.sort()
+	}
+}
+
 void FollowPathBehaviour::Update(GameObject* obj, float deltaTime)
 {
 	float distToTarget = Vector2Distance(obj->GetPosition(), m_target);

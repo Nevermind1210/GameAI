@@ -12,13 +12,33 @@ WonderBehaviour::~WonderBehaviour()
 
 
 
-void WonderBehaviour::Update(GameObject* obj, float deltaTime)
+int WonderBehaviour::Wander(GameObject* obj)
 {
-	float distToTarget = Vector2Distance(obj->GetPosition(), m_target);
-
 	
 
+	return 0;
+}
 
+void WonderBehaviour::Update(GameObject* obj, float deltaTime)
+{
+
+	float distToTarget = Vector2Distance(obj->GetPosition(), m_target);
+	if (distToTarget < m_targetRadius) {
+		if (m_onArriveFn)
+			m_onArriveFn();
+	}
+
+	Vector2 heading = Vector2Add(obj->GetPosition(), obj->GetVelocity());
+	float headingLen = Vector2Length(heading);
+
+	Vector2 dirToTarget = Vector2Normalize(Vector2Subtract(m_target, obj->GetPosition()));
+	
+	Vector2 vecToTarget = Vector2Scale(dirToTarget, headingLen);
+
+	Vector2 targetForcePos = Vector2Add(vecToTarget, obj->GetPosition());
+	Vector2 forceDir = Vector2Subtract(targetForcePos, heading);
+
+	obj->ApplyForce(forceDir);
 }
 
 void WonderBehaviour::Draw(GameObject* obj)

@@ -9,9 +9,8 @@ Player::Player()
 	m_seekBehaviour = new SeekBehaviour();
 	m_seekBehaviour->SetTargetRadius(25.0f);
 	m_seekBehaviour->OnArrive([this]() {
-		SetVelocity({ 0,0 });
-		SetBehaviour(m_kbBehaviour);
-
+		SetVelocity({ 0,0 }); // this slice of code is to STOP at radius when seeking
+		SetBehaviour(m_kbBehaviour);// Swap back to WASD.
 		});
 	m_fleeBehaviour = new FleeBehaviour();
 	m_fleeBehaviour->SetTargetRadius(100);

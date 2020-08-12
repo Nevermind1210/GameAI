@@ -19,3 +19,18 @@ void Graph2D::GetNearbyNodes(Vector2 position, float radius, std::vector<Graph2D
 		}
 	}
 }
+
+bool Graph2D::FindPath(Node* startNode, std::function<bool(Node*)>isGoalNode, std::list<Node*> out_path)
+{
+	//stubbing for the Dijstra's short path
+	//Its similar to the BFS and DFS too! But now I need to refactor it into a lengthier version.
+	std::list<Node*>stack;
+	std::list<Node*>visted;
+	if (startNode == nullptr)
+	{
+		startNode = m_nodes[0];
+	}
+
+
+	
+}

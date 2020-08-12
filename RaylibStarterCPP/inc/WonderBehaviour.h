@@ -2,6 +2,7 @@
 #include "raymath.h"
 #include "Behaviour.h"
 
+#include <functional>
 
 class WonderBehaviour : public Behaviour
 {
@@ -9,7 +10,7 @@ public:
 	WonderBehaviour();
 	virtual ~WonderBehaviour();
 
-	
+	virtual int Wander(GameObject* obj);
 	virtual void Update(GameObject* obj, float deltaTime);
 	virtual void Draw(GameObject* obj);
 
@@ -23,5 +24,7 @@ protected:
 
 	Vector2 m_target;
 	float m_targetRadius = 1.0f;
+
+	std::function<void()> m_onArriveFn;
 private:
 };

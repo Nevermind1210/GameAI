@@ -62,6 +62,7 @@ public:
 		{
 			startNode = m_nodes[0];
 		}
+		stack.push_back(startNode);
 
 		while (stack.empty() == false)
 		{

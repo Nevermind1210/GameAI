@@ -147,9 +147,9 @@ C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\SeekBehaviour.cpp(3
 C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\SeekBehaviour.cpp(37,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Player.cpp
   WonderBehaviour.cpp
-C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\WonderBehaviour.cpp(26,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\WonderBehaviour.cpp(26,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\WonderBehaviour.cpp(27,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\WonderBehaviour.cpp(27,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\WonderBehaviour.cpp(46,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\WonderBehaviour.cpp(46,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\WonderBehaviour.cpp(47,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\WonderBehaviour.cpp(47,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Generating Code...
   RaylibStarterCPP.vcxproj -> C:\Users\s200501\source\repos\GameAI\bin\Win32\Debug\GameAI.exe
