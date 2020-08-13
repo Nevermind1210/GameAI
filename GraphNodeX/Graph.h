@@ -24,6 +24,12 @@ public:
 		TEdgeData data;
 	};
 
+	struct PFNode
+	{
+		Node* graphNode;
+		PFNode* parent;
+		float gScore;
+	};
 public:
 	// Constructor!
 	Graph()
