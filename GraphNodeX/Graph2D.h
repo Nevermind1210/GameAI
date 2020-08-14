@@ -9,7 +9,7 @@ public:
 	Graph2D();
 	virtual ~Graph2D();
 	
-	bool FindPath(Node* startNode, std::function<bool(Node*)>isGoalNode, std::list<Node*> out_path);
+	bool FindPath(Node* startNode, std::function<bool(Node*)>isGoalNode, std::list<Node*> &out_path);
 	void GetNearbyNodes(Vector2 position, float radius, std::vector<Graph2D::Node*>& out_nodes);
 
 protected:

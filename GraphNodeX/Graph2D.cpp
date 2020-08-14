@@ -1,4 +1,5 @@
 #include "Graph2D.h"
+#include "Graph.h"
 
 Graph2D::Graph2D()
 {
@@ -8,69 +9,85 @@ Graph2D::~Graph2D()
 {
 }
 
-bool Graph2D::FindPath(Node* startNode, std::function<bool(Node*)> isGoalNode, std::list<Node*> out_path)
+bool Graph2D::FindPath(Node* startNode, std::function<bool(Node*)> isGoalNode, std::list<Node*> &out_path)
 {
+	//int currentStep = 0;
+	std::list<PFNode*>stack;
+	std::list<PFNode*>visted;
+	
+
+	auto GetNodeList = [&](Node* nodeToFind)->PFNode*
+	{
+		for (auto& n : stack)
+			if (n->graphNode == nodeToFind)
+				return n;
+		for (auto& n : visted)
+			if (n->graphNode == nodeToFind)
+				return n;
+		return nullptr;
+	};
+
 	//Intializing values.
-	std::list<Node*>stack;
-	std::list<Node*>visted;
-	int currentStep = 0;
-
 	PFNode* startPFNode = new PFNode();
-	Node* endNode = nullptr;
-
+	startPFNode->graphNode = startNode;
 	startPFNode->gScore = 0;
 	startPFNode->parent = nullptr;
 
-	stack.push_back(startNode);
+	stack.push_back(startPFNode);
 
 	while (stack.empty() == false)
 	{
-		visted.sort(startPFNode->gScore);
+		stack.sort([&](PFNode* a, PFNode* b)
+			{
+				return a->gScore > b->gScore;
+			});
 
-		Node* n = stack.back();
-		if (n == endNode)
-			return false;
+		PFNode* currentNode = stack.back();
+		stack.pop_back();
+		visted.push_back(currentNode);
 
-		n = nullptr;
-		delete n;
-
-		n = visted.back();
-
-		for (auto it = out_path.begin(); it != out_path.end(); it++) {
-			if (n == *it) {
-				endNode = n;
-				break;
+		if (isGoalNode(currentNode->graphNode))
+		{
+			// we have found what we are looking for
+			// we need to calculate a path back to the start node
+			// by tracking back through the "parent"
+			PFNode* currentN = currentNode;
+			while (currentN != nullptr)
+			{
+				out_path.push_back(currentN->graphNode);
+				currentN = currentN->parent;
 			}
+			return true;
 		}
 
-		visted.push_back(n);
+		for (Edge& edge : currentNode->graphNode->connections)
+		{
+			float gScore = currentNode->gScore + edge.data;
 
-		for (auto it = n->connections.begin(); it != n->connections.end(); it++) {
-			Node* connection = (*it).to;
-			if (connection == nullptr)
-				continue;
+			auto PFNodeChild = GetNodeList(edge.to);
+			/*	bool isStack = std::find(stack.begin(), stack.end(), edge.to) != stack.end();
+				bool inVisted = std::find(visted.begin(), visted.end(), edge.to) != visted.end();*/
 
-			for (Edge& edge : n->connections)
+			if (PFNodeChild == nullptr)
 			{
-				bool isStack = std::find(stack.begin(), stack.end(), edge.to) != stack.end();
-				bool inVisted = std::find(visted.begin(), visted.end(), edge.to) != visted.end();
-				if (isStack || inVisted) {
-					continue;
+				PFNode* PFNodeChild = new PFNode;
+				PFNodeChild->parent = currentNode;
+				PFNodeChild->graphNode = edge.to;
+				PFNodeChild->gScore = gScore;
+
+				stack.push_back(PFNodeChild);
+			}
+			else
+			{
+				if (PFNodeChild->gScore > gScore)
+				{
+					PFNodeChild->parent = currentNode;
+					PFNodeChild->gScore = gScore;
 				}
-				stack.insert(stack.begin(), edge.to);
-			}
-
-			std::list<PFNode*> Path;
-			n = endNode;
-
-			while (startPFNode != nullptr)
-			{
-				Path.push_back(startPFNode);
-				startPFNode = startPFNode->parent;
 			}
 		}
-		return;
 	}
+	return false;
 }
 
 void Graph2D::GetNearbyNodes(Vector2 position, float radius, std::vector<Graph2D::Node*>& out_nodes)

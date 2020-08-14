@@ -9,13 +9,13 @@ class Graph
 public:
 	struct Edge;
 	struct Node;
+	struct PFNode;
 
 	//List
 	struct Node
 	{
 		TNodeData data;
 		std::vector<Edge> connections;
-
 	};
 
 	struct Edge

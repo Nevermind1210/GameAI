@@ -1,30 +1,13 @@
 #pragma once
 #include "raymath.h"
 #include "Behaviour.h"
-#include <list>
-#include <vector>
-struct Edge {
-	Node* target;
-	float cost;
-};
-
-struct Node {
-	Vector2 pos;
-
-	float gScore;
-	Node* parent;
-
-	std::vector<Edge> connections;
-};
-
 class FollowPathBehaviour : public Behaviour
 {
 public:
 
 	FollowPathBehaviour();
 	virtual ~FollowPathBehaviour();
-	
-	virtual void dijkstrasSearch(Node* startNode, const std::list<Node*> &endNodes, std::list<Node*> &outPath);
+
 	virtual void Update(GameObject* obj, float deltaTime);
 	virtual void Draw(GameObject* obj);
 

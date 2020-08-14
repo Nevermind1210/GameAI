@@ -54,7 +54,8 @@ namespace Raylib
         }
 
         // extension providing SubText
-        public static string SubText(this string input, int position, int length)
+        public static string SubText(this string input, int position, int 
+            gth)
         {
             return input.Substring(position, Math.Min(length, input.Length));
         }

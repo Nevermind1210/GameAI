@@ -73,9 +73,9 @@ void TestGraph()
 
 int main(int argc, char* argv[])
 {
-	TestGraph();
+	//TestGraph(); 
 	{
-		Application app(800, 450, "Game AI");
+		Application app(800, 450, "Graphing Nodes Test");
 		app.Run();
 	}
 
