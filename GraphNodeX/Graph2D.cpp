@@ -9,13 +9,13 @@ Graph2D::~Graph2D()
 {
 }
 
-bool Graph2D::FindPath(Node* startNode, std::function<bool(Node*)> isGoalNode, std::list<Node*> &out_path)
+bool Graph2D::FindPathDijk(Node* startNode, std::function<bool(Node*)> isGoalNode, std::list<Node*> &out_path)
 {
 	//int currentStep = 0;
 	std::list<PFNode*>stack;
 	std::list<PFNode*>visted;
 	
-
+	//this is if there is a Node to find 
 	auto GetNodeList = [&](Node* nodeToFind)->PFNode*
 	{
 		for (auto& n : stack)
@@ -24,7 +24,7 @@ bool Graph2D::FindPath(Node* startNode, std::function<bool(Node*)> isGoalNode, s
 		for (auto& n : visted)
 			if (n->graphNode == nodeToFind)
 				return n;
-		return nullptr;
+		return nullptr; //else null
 	};
 
 	//Intializing values.
@@ -83,6 +83,92 @@ bool Graph2D::FindPath(Node* startNode, std::function<bool(Node*)> isGoalNode, s
 				{
 					PFNodeChild->parent = currentNode;
 					PFNodeChild->gScore = gScore;
+				}
+			}
+		}
+	}
+	return false;
+}
+
+bool Graph2D::FindPath(Node* startNode, Node* endNode, std::list<Node*>& out_path)
+{
+	std::list<ANode*>stack;
+	std::list<ANode*>visted;
+
+	auto Heuristic(ANode*);
+
+
+	//this is if there is a Node to find 
+	auto GetNodeList = [&](Node* nodeToFind)->ANode*
+	{
+		for (auto& n : stack)
+			if (n->graphNode == nodeToFind)
+				return n;
+		for (auto& n : visted)
+			if (n->graphNode == nodeToFind)
+				return n;
+		return nullptr; //else null
+	};
+
+	//Intializing values.
+	ANode* startANode = new ANode();
+	startANode->graphNode = startNode;
+	startANode->hScore = 0;
+	startANode->fScore = 0;
+	startANode->gScore = 0;
+
+	startANode->prev = nullptr;
+
+	stack.push_back(startANode);
+
+	while (stack.empty() == false)
+	{
+		stack.sort([&](ANode* a, ANode* b)
+			{
+				return a->fScore > b->fScore;
+			});
+
+		ANode* currentNode = stack.back();
+		stack.pop_back();
+		visted.push_back(currentNode);
+
+		if (currentNode->graphNode)
+		{
+			// we have found what we are looking for
+			// we need to calculate a path back to the start node
+			// by tracking back through the "parent"
+			ANode* currentN = currentNode;
+			while (currentN != nullptr)
+			{
+				out_path.push_back(currentN->graphNode);
+				currentN = currentN->prev;
+			}
+			return true;
+		}
+
+		for (Edge& edge : currentNode->graphNode->connections)
+		{
+			float gScore = currentNode->gScore + edge.data;
+			auto hScore = 
+			float fScore = gScore + hScore;
+
+			auto ANodeChild = GetNodeList(edge.to);
+
+			if (ANodeChild == nullptr)
+			{
+				ANode* ANodeChild = new ANode;
+				ANodeChild->prev = currentNode;
+				ANodeChild->graphNode = edge.to;
+				ANodeChild->gScore = gScore;
+
+				stack.push_back(ANodeChild);
+			}
+			else
+			{
+				if (ANodeChild->fScore > gScore)
+				{
+					ANodeChild->prev = currentNode;
+					ANodeChild->gScore = gScore;
 				}
 			}
 		}

@@ -30,6 +30,19 @@ public:
 		PFNode* parent;
 		float gScore;
 	};
+
+	struct ANode
+	{
+		Vector2 position;
+
+		Node* graphNode;
+		ANode* prev;
+		float gScore;
+		float hScore;
+		float fScore;
+
+		std::vector<Edge> connections;
+	};
 public:
 	// Constructor!
 	Graph()
