@@ -30,10 +30,10 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Graph2D.cpp">
+    <ClCompile Include="Graph2DEditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Graph2DEditor.cpp">
+    <ClCompile Include="Graph2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,16 +53,13 @@
     <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Graph.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Graph2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Graph2DEditor.h">
+    <ClInclude Include="Graph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Graph2DRenderer.h">
+    <ClInclude Include="Graph2DEditor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

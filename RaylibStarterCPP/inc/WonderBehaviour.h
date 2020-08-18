@@ -1,7 +1,7 @@
 #pragma once
 #include "raymath.h"
 #include "Behaviour.h"
-
+#include <vector>
 #include <functional>
 
 class WonderBehaviour : public Behaviour
@@ -10,7 +10,6 @@ public:
 	WonderBehaviour();
 	virtual ~WonderBehaviour();
 
-	virtual int Wander(GameObject* obj);
 	virtual void Update(GameObject* obj, float deltaTime);
 	virtual void Draw(GameObject* obj);
 
@@ -21,7 +20,7 @@ public:
 	void SetTargetRadius(const float& radius);
 
 protected:
-
+	std::vector<Vector2>WanderList;
 	Vector2 m_target;
 	float m_targetRadius = 1.0f;
 

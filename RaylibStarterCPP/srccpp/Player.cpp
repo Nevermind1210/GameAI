@@ -2,7 +2,7 @@
 #include "KeyboardBehaviour.h"
 #include "SeekBehaviour.h"
 #include "FleeBehaviour.h"
-
+#include"WonderBehaviour.h"
 Player::Player()
 {
 	m_kbBehaviour = new KeyboardBehaviour();
@@ -43,7 +43,12 @@ void Player::Update(float deltaTime)
 		m_fleeBehaviour->SetTarget(GetMousePosition());
 		SetBehaviour(m_fleeBehaviour);
 	}
-
+	if (IsKeyPressed(KEY_ONE))//len was here
+	{
+		m_wonderBehaviour->SetTarget();
+		SetBehaviour(m_wonderBehaviour);
+	}
+	
 
 	GameObject::Update(deltaTime);
 }

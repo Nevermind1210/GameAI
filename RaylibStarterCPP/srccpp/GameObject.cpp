@@ -16,7 +16,7 @@ void GameObject::Update(float deltaTime)
 	if (m_behaviour != nullptr)
 		m_behaviour->Update(this, deltaTime);
 
-	//ApplyForce(-m_velocity * m)firction);
+	//ApplyForce(-m_velocity * m)friction);
 	ApplyForce(Vector2Scale(Vector2Negate(m_velocity), m_friction));
 
 	//m_vel += m_acceleration * deltaTime;

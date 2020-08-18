@@ -90,16 +90,14 @@ bool Graph2D::FindPathDijk(Node* startNode, std::function<bool(Node*)> isGoalNod
 	return false;
 }
 
-bool Graph2D::FindPath(Node* startNode, Node* endNode, std::list<Node*>& out_path)
+bool Graph2D::FindPathAStar(Node* startNode, Node* endNode, std::list<Node*>& out_path)
 {
-	std::list<ANode*>stack;
-	std::list<ANode*>visted;
-
-	auto Heuristic(ANode*);
+	std::list<PFNode*>stack;
+	std::list<PFNode*>visted;
 
 
 	//this is if there is a Node to find 
-	auto GetNodeList = [&](Node* nodeToFind)->ANode*
+	auto GetNodeList = [&](Node* nodeToFind)->PFNode*
 	{
 		for (auto& n : stack)
 			if (n->graphNode == nodeToFind)
@@ -111,64 +109,72 @@ bool Graph2D::FindPath(Node* startNode, Node* endNode, std::list<Node*>& out_pat
 	};
 
 	//Intializing values.
-	ANode* startANode = new ANode();
-	startANode->graphNode = startNode;
-	startANode->hScore = 0;
-	startANode->fScore = 0;
-	startANode->gScore = 0;
+	PFNode* ApFNode = new PFNode();
+	ApFNode->gScore = 0.0f;
+	ApFNode->hScore = 0.0f;
+	ApFNode->fScore = 0.0f;
+	ApFNode->parent = nullptr;
+	ApFNode->graphNode = startNode;
 
-	startANode->prev = nullptr;
-
-	stack.push_back(startANode);
+	stack.push_back(ApFNode);
 
 	while (stack.empty() == false)
 	{
-		stack.sort([&](ANode* a, ANode* b)
+		stack.sort([&](PFNode* a, PFNode* b)
 			{
 				return a->fScore > b->fScore;
 			});
 
-		ANode* currentNode = stack.back();
+		PFNode* currentNode = stack.back();
 		stack.pop_back();
 		visted.push_back(currentNode);
 
-		if (currentNode->graphNode)
+		if (endNode == currentNode->graphNode)
 		{
 			// we have found what we are looking for
 			// we need to calculate a path back to the start node
 			// by tracking back through the "parent"
-			ANode* currentN = currentNode;
+			PFNode* currentN = currentNode;
 			while (currentN != nullptr)
 			{
 				out_path.push_back(currentN->graphNode);
-				currentN = currentN->prev;
+				currentN = currentN->parent;
 			}
 			return true;
 		}
 
 		for (Edge& edge : currentNode->graphNode->connections)
 		{
-			float gScore = currentNode->gScore + edge.data;
-			auto hScore = 
-			float fScore = gScore + hScore;
-
 			auto ANodeChild = GetNodeList(edge.to);
 
+			float gScore = currentNode->gScore + edge.data;
+			float hScore = Vector2Distance(edge.to->data, endNode->data);
+			float fScore = gScore + hScore;
+			
+			//if the stack is empty 
 			if (ANodeChild == nullptr)
 			{
-				ANode* ANodeChild = new ANode;
-				ANodeChild->prev = currentNode;
-				ANodeChild->graphNode = edge.to;
+				//create instances and add scores.
+				PFNode* ANodeChild = new PFNode;
 				ANodeChild->gScore = gScore;
+				ANodeChild->hScore = hScore;
+				ANodeChild->fScore = fScore;
+
+				ANodeChild->parent = currentNode;
+				ANodeChild->graphNode = edge.to;
 
 				stack.push_back(ANodeChild);
 			}
+			//or its already in the stack.
 			else
 			{
-				if (ANodeChild->fScore > gScore)
+				if (ANodeChild->fScore > fScore)
 				{
-					ANodeChild->prev = currentNode;
+					//make scores
+					ANodeChild->parent = currentNode;
 					ANodeChild->gScore = gScore;
+					ANodeChild->hScore = hScore;
+					ANodeChild->fScore = fScore;
 				}
 			}
 		}

@@ -1,5 +1,6 @@
 #include "Graph2DEditor.h"
 #include "Graph2D.h"
+#include <iostream>
 
 Graph2DEditor::Graph2DEditor()
 {
@@ -13,6 +14,8 @@ Graph2DEditor::~Graph2DEditor()
 
 void Graph2DEditor::Update(float deltaTime)
 {
+	/*std::cout << "This is X value: " << GetMousePosition().x << std::endl;
+	std::cout << "This is Y value: " << GetMousePosition().y << std::endl;*/
 	if (IsMouseButtonPressed(0))
 	{
 		auto mousePos = GetMousePosition();
@@ -47,8 +50,12 @@ void Graph2DEditor::Update(float deltaTime)
 			};
 			//call the FindPath method
 			std::list<Graph2D::Node*> Path;
+			std::vector<Graph2D::Node*> NearbyStartNode;
+			GetGraph()->GetNearbyNodes({ 100,100 }, 30, NearbyStartNode);
+			std::vector<Graph2D::Node*> NearbyGoalNode;
+			GetGraph()->GetNearbyNodes({ 350,250 }, 30,NearbyGoalNode);
 
-			if (m_graph->FindPath(m_startNode, isGoalNode, path) == true)
+			if (m_graph->FindPathAStar(NearbyStartNode[0], NearbyGoalNode[0], path) == true)
 			{
 				//populate the std::vector<Vetor2> path with our path data.
 				m_path.clear();

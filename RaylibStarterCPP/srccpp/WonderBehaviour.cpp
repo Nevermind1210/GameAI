@@ -3,36 +3,34 @@
 #include <random>
 
 WonderBehaviour::WonderBehaviour()
+
 {
+	WanderList[0] = { 50,50 };
+	WanderList[1] = { 500,50 };
+	WanderList[2] = { 50,200 };
+	SetTarget(WanderList[0]);
+
+
 }
 
 WonderBehaviour::~WonderBehaviour()
 {
 }
 
-
-
-int WonderBehaviour::Wander(GameObject* obj)
-{
-	
-
-	return 0;
-}
-
 void WonderBehaviour::Update(GameObject* obj, float deltaTime)
 {
-
 	float distToTarget = Vector2Distance(obj->GetPosition(), m_target);
 	if (distToTarget < m_targetRadius) {
 		if (m_onArriveFn)
 			m_onArriveFn();
+
+		WanderList.push_back(WanderList[0]);
 	}
 
 	Vector2 heading = Vector2Add(obj->GetPosition(), obj->GetVelocity());
-	float headingLen = Vector2Length(heading);
+	float headingLen = 500.0f;
 
 	Vector2 dirToTarget = Vector2Normalize(Vector2Subtract(m_target, obj->GetPosition()));
-	
 	Vector2 vecToTarget = Vector2Scale(dirToTarget, headingLen);
 
 	Vector2 targetForcePos = Vector2Add(vecToTarget, obj->GetPosition());
@@ -54,6 +52,8 @@ const Vector2& WonderBehaviour::GetTarget() const
 
 void WonderBehaviour::SetTarget(const Vector2& target)
 {
+
+
 	m_target = target;
 }
 

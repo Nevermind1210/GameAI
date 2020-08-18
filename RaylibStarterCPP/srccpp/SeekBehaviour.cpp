@@ -1,5 +1,6 @@
 #include "SeekBehaviour.h"
 #include "GameObject.h"
+#include <time.h>
 
 SeekBehaviour::SeekBehaviour() : Behaviour()
 {
@@ -13,6 +14,7 @@ SeekBehaviour::~SeekBehaviour()
 
 void SeekBehaviour::Update(GameObject* obj, float deltaTime)
 {
+
 	float distToTarget = Vector2Distance(obj->GetPosition(), m_target);
 	if (distToTarget < m_targetRadius) {
 		if (m_onArriveFn)
