@@ -6,6 +6,7 @@ class FleeBehaviour;
 class KeyboardBehaviour;
 class SeekBehaviour;
 class WonderBehaviour;
+class FollowPathBehaviour;
 class Player : public GameObject
 {
 public: 
@@ -20,6 +21,7 @@ protected:
 	SeekBehaviour* m_seekBehaviour;
 	FleeBehaviour* m_fleeBehaviour;
 	WonderBehaviour* m_wonderBehaviour;
+	FollowPathBehaviour* m_followPathBehaviour;
 
 private:
 };

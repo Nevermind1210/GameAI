@@ -95,7 +95,6 @@ bool Graph2D::FindPathAStar(Node* startNode, Node* endNode, std::list<Node*>& ou
 	std::list<PFNode*>stack;
 	std::list<PFNode*>visted;
 
-
 	//this is if there is a Node to find 
 	auto GetNodeList = [&](Node* nodeToFind)->PFNode*
 	{

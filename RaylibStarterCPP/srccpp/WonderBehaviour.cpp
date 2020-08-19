@@ -3,40 +3,26 @@
 #include <random>
 
 WonderBehaviour::WonderBehaviour()
-
 {
-	WanderList[0] = { 50,50 };
-	WanderList[1] = { 500,50 };
-	WanderList[2] = { 50,200 };
-	SetTarget(WanderList[0]);
-
-
 }
 
 WonderBehaviour::~WonderBehaviour()
 {
+
 }
 
 void WonderBehaviour::Update(GameObject* obj, float deltaTime)
 {
-	float distToTarget = Vector2Distance(obj->GetPosition(), m_target);
-	if (distToTarget < m_targetRadius) {
-		if (m_onArriveFn)
-			m_onArriveFn();
-
-		WanderList.push_back(WanderList[0]);
+	float distToTarget = Vector2Distance(m_target, obj->GetPosition());
+	if (distToTarget < m_targetRadius)
+	{
+		m_target.x = rand() % 1280;
+		m_target.y = rand() % 720;
 	}
+	Vector2 dirToTarget = Vector2Subtract(m_target, obj->GetPosition());
+	dirToTarget = Vector2MultiplyV(Vector2Normalize(dirToTarget), { 100,100 });
+	obj->ApplyForce(dirToTarget);
 
-	Vector2 heading = Vector2Add(obj->GetPosition(), obj->GetVelocity());
-	float headingLen = 500.0f;
-
-	Vector2 dirToTarget = Vector2Normalize(Vector2Subtract(m_target, obj->GetPosition()));
-	Vector2 vecToTarget = Vector2Scale(dirToTarget, headingLen);
-
-	Vector2 targetForcePos = Vector2Add(vecToTarget, obj->GetPosition());
-	Vector2 forceDir = Vector2Subtract(targetForcePos, heading);
-
-	obj->ApplyForce(forceDir);
 }
 
 void WonderBehaviour::Draw(GameObject* obj)
@@ -52,8 +38,6 @@ const Vector2& WonderBehaviour::GetTarget() const
 
 void WonderBehaviour::SetTarget(const Vector2& target)
 {
-
-
 	m_target = target;
 }
 
@@ -65,4 +49,9 @@ const float& WonderBehaviour::GetTargetRadius() const
 void WonderBehaviour::SetTargetRadius(const float& radius)
 {
 	m_targetRadius = radius;
+}
+
+void WonderBehaviour::OnArrive(std::function<void()> callback)
+{
+	m_onArriveFn = callback;
 }

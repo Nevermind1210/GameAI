@@ -1,6 +1,8 @@
 #pragma once
 #include "raymath.h"
 #include "Behaviour.h"
+#include <vector>
+class Player;
 class FollowPathBehaviour : public Behaviour
 {
 public:
@@ -11,14 +13,16 @@ public:
 	virtual void Update(GameObject* obj, float deltaTime);
 	virtual void Draw(GameObject* obj);
 
-	const Vector2& GetTarget() const;
-	void SetTarget(const Vector2& target);
+	const std::vector<Vector2>& GetPath() const;
+	void SetPath(const std::vector<Vector2>& path);
 
 	const float& GetTargetRadius() const;
 	void SetTargetRadius(const float& radius);
 
 protected:
-	Vector2 m_target;
+
+	Player* m_player;
+	std::vector<Vector2> m_path;
 	float m_targetRadius = 1.0f;
 private:
 };

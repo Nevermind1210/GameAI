@@ -48,14 +48,14 @@ void Graph2DEditor::Update(float deltaTime)
 			auto isGoalNode = [this](Graph2D::Node* node) {
 				return node == m_endNode;
 			};
-			//call the FindPath method
-			std::list<Graph2D::Node*> Path;
-			std::vector<Graph2D::Node*> NearbyStartNode;
-			GetGraph()->GetNearbyNodes({ 100,100 }, 30, NearbyStartNode);
-			std::vector<Graph2D::Node*> NearbyGoalNode;
-			GetGraph()->GetNearbyNodes({ 350,250 }, 30,NearbyGoalNode);
-
-			if (m_graph->FindPathAStar(NearbyStartNode[0], NearbyGoalNode[0], path) == true)
+			////call the FindPath method
+			//std::list<Graph2D::Node*> Path;
+			//std::vector<Graph2D::Node*> NearbyStartNode;
+			//GetGraph()->GetNearbyNodes(GetMousePosition(),15, NearbyStartNode);
+			//std::vector<Graph2D::Node*> NearbyGoalNode;
+			//GetGraph()->GetNearbyNodes(m_startNode, 30,NearbyGoalNode);
+			
+			if (m_endNode != nullptr && m_graph->FindPathAStar(m_startNode, m_endNode, path) == true)
 			{
 				//populate the std::vector<Vetor2> path with our path data.
 				m_path.clear();
@@ -65,6 +65,10 @@ void Graph2DEditor::Update(float deltaTime)
 				}
 			}
 		}
+	}
+	if (IsKeyPressed(KEY_TAB))
+	{
+
 	}
 }
 

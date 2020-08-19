@@ -1,5 +1,6 @@
 #include "FollowPathBehaviour.h"
 #include <GameObject.h>
+#include "Player.h"
 
 FollowPathBehaviour::FollowPathBehaviour()
 {
@@ -13,24 +14,30 @@ FollowPathBehaviour::~FollowPathBehaviour()
 
 void FollowPathBehaviour::Update(GameObject* obj, float deltaTime)
 {
-	float distToTarget = Vector2Distance(obj->GetPosition(), m_target);
+	// TODO: 
+	// to start with, apply a force in the direction of the first point in the m_path
+	// once we are done, we can figure out how to move to the next point
+
+
 
 }
 
 void FollowPathBehaviour::Draw(GameObject* obj)
 {
-	DrawCircle(m_target.x, m_target.y, m_targetRadius, LIGHTGRAY);
-	DrawCircle(m_target.x, m_target.y, 4, RED);
+	// TODO: write code to draw a line from each point in the path
+	// to the next point in the path
+	DrawLine(10, 10, 193, 40, GREEN);
+
 }
 
-const Vector2& FollowPathBehaviour::GetTarget() const
+const std::vector<Vector2>& FollowPathBehaviour::GetPath() const
 {
-	return m_target;
+	return m_path;
 }
 
-void FollowPathBehaviour::SetTarget(const Vector2& target)
+void FollowPathBehaviour::SetPath(const std::vector<Vector2>& path)
 {
-	m_target = target;
+	m_path = path;
 }
 
 const float& FollowPathBehaviour::GetTargetRadius() const

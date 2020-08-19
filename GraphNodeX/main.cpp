@@ -67,7 +67,7 @@ void TestGraph()
 		return false;
 		});
 
-	system("pause");
+	//system("pause");
 }
 
 
@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
 {
 	//TestGraph(); 
 	{
-		Application app(800, 450, "Graphing Nodes Test");
+		Application app(1280, 720, "Graphing Nodes Test");
 		app.Run();
 	}
 

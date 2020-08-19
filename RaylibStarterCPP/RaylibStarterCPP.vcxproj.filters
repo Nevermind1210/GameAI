@@ -42,10 +42,10 @@
     <ClCompile Include="srccpp\FleeBehaviour.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Graph2DEditor.cpp">
+    <ClCompile Include="srccpp\Graph2DEditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Graph2D.cpp">
+    <ClCompile Include="srccpp\Graph2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

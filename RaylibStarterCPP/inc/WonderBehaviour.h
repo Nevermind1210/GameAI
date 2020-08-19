@@ -19,7 +19,10 @@ public:
 	const float& GetTargetRadius() const;
 	void SetTargetRadius(const float& radius);
 
+	void OnArrive(std::function<void()> callback);
+
 protected:
+
 	std::vector<Vector2>WanderList;
 	Vector2 m_target;
 	float m_targetRadius = 1.0f;

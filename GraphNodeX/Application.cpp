@@ -48,11 +48,11 @@ void Application::Load()
 
 	m_graph = new Graph2D();
 
-	int numRows = 4;
-	int numCols = 6;
-	float xOffSet = 100;
-	float yOFSet = 100;
-	float spacing = 50;
+	int numRows = 23;
+	int numCols = 41;
+	float xOffSet = 30;
+	float yOFSet = 30;
+	float spacing = 30;
 
 	for (int y = 0; y < numRows; y++)
 	{

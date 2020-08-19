@@ -16,7 +16,7 @@ void Graph2DEditor::Update(float deltaTime)
 {
 	/*std::cout << "This is X value: " << GetMousePosition().x << std::endl;
 	std::cout << "This is Y value: " << GetMousePosition().y << std::endl;*/
-	if (IsMouseButtonPressed(0))
+	if (IsMouseButtonPressed(KEY_N))
 	{
 		auto mousePos = GetMousePosition();
 
@@ -33,7 +33,7 @@ void Graph2DEditor::Update(float deltaTime)
 
 		}
 	}
-	if (IsMouseButtonPressed(1))
+	if (IsMouseButtonPressed(KEY_K))
 	{
 		//get the first node that we click on.
 		std::vector<Graph2D::Node*> neighbouringNodes;
@@ -55,7 +55,7 @@ void Graph2DEditor::Update(float deltaTime)
 			std::vector<Graph2D::Node*> NearbyGoalNode;
 			GetGraph()->GetNearbyNodes({ 350,250 }, 30, NearbyGoalNode);
 
-			if (m_graph->FindPathAStar(NearbyStartNode[0], NearbyGoalNode[0], path) == true)
+			if (m_endNode != nullptr && m_graph->FindPathAStar(NearbyStartNode[0], NearbyGoalNode[0], path) == true)
 			{
 				//populate the std::vector<Vetor2> path with our path data.
 				m_path.clear();
@@ -65,6 +65,10 @@ void Graph2DEditor::Update(float deltaTime)
 				}
 			}
 		}
+	}
+	if (IsKeyPressed(KEY_TAB))
+	{
+
 	}
 }
 

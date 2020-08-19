@@ -29,9 +29,8 @@
 int main(int argc, char* argv[])
 {
     {
-        Application app(800, 450, "Game AI");
+        Application app(1280, 720, "Game AI (A possible stealth game in the making)");
         app.Run();
     }
-
     return 0;
 }

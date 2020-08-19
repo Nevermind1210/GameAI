@@ -1,21 +1,21 @@
 ﻿  Graph2DEditor.cpp
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(78,83): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(78,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(78,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(78,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(85,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(85,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(86,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(86,29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(92,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(92,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(99,74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(99,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(99,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(99,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(104,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(104,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(108,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(108,29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\xavie\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(112,21): warning C4018: '<': signed/unsigned mismatch
-  GraphNodeX.vcxproj -> C:\Users\xavie\source\repos\GameAI\bin\Win32\Debug\GraphNodeX.exe
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(82,83): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(82,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(82,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(82,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(89,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(89,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(90,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(90,29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(96,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(96,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(103,74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(103,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(103,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(103,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(108,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(108,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(112,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(112,29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\GraphNodeX\Graph2DEditor.cpp(116,21): warning C4018: '<': signed/unsigned mismatch
+  GraphNodeX.vcxproj -> C:\Users\s200501\source\repos\GameAI\bin\Win32\Debug\GraphNodeX.exe

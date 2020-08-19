@@ -168,8 +168,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Graph2D.cpp" />
-    <ClCompile Include="Graph2DEditor.cpp" />
+    <ClCompile Include="srccpp\Graph2D.cpp" />
+    <ClCompile Include="srccpp\Graph2DEditor.cpp" />
     <ClCompile Include="srccpp\FleeBehaviour.cpp" />
     <ClCompile Include="srccpp\FollowPathBehaviour.cpp" />
     <ClCompile Include="srccpp\Application.cpp" />
