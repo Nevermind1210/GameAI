@@ -1,2 +1,17 @@
-﻿  FollowPathBehaviour.cpp
+﻿  GameObject.cpp
+  Player.cpp
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\Player.cpp(90,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\Player.cpp(90,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\Player.cpp(93,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\Player.cpp(93,16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\Player.cpp(92,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\Player.cpp(92,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  StandingGuard.cpp
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(41,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(41,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(44,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(44,16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(43,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(43,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
   RaylibStarterCPP.vcxproj -> C:\Users\s200501\source\repos\GameAI\bin\Win32\Debug\GameAI.exe

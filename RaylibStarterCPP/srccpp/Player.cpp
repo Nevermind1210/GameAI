@@ -66,15 +66,6 @@ void Player::Update(float deltaTime)
 		m_wonderBehaviour->SetTarget(GetMousePosition());
 		SetBehaviour(m_wonderBehaviour);
 	}
-	if (IsKeyPressed(KEY_TWO))
-	{
-		std::vector<Vector2> hardCodedPath = {
-			{10, 10}, {100, 10}, {200, 10}, {300, 10}, {400, 10}, {400, 100}, {400, 200}, {400, 300}, {400, 400}
-		};
-
-		m_followPathBehaviour->SetPath(hardCodedPath);
-		SetBehaviour(m_followPathBehaviour);
-	}
 	std::cout << "This is X value: " << GetMousePosition().x << std::endl;
 	std::cout << "This is Y value: " << GetMousePosition().y << std::endl;
 
@@ -84,4 +75,11 @@ void Player::Update(float deltaTime)
 void Player::Draw()
 {
 	GameObject::Draw();
+
+	//Debug draw
+	Vector2 targetHeading = Vector2Add(m_position, m_velocity);
+	DrawCircle(m_position.x, m_position.y, 8, GRAY);
+
+	DrawLine(m_position.x, m_position.y,
+		targetHeading.x, targetHeading.y, DARKGRAY);
 }

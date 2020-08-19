@@ -48,6 +48,9 @@
     <ClCompile Include="srccpp\Graph2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="srccpp\StandingGuard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Behaviour.h">
@@ -84,6 +87,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inc\Graph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\StandingGuard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

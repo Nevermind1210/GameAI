@@ -23,6 +23,6 @@ protected:
 
 	Player* m_player;
 	std::vector<Vector2> m_path;
-	float m_targetRadius = 1.0f;
+	float m_targetRadius = 35.0f;
 private:
 };
