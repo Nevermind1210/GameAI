@@ -2,9 +2,12 @@
 
 #include "GameObject.h"
 
-class Player;
 class FollowPathBehaviour;
-class StandingGuard : public GameObject
+class SeekBehaviour;
+class Player;
+class Graph2D;
+
+class StandingGuard : public GameObject  
 {
 public:
 	StandingGuard();
@@ -12,11 +15,23 @@ public:
 
 	virtual void Update(float deltaTime);
 	virtual void Draw();
+
+	void SetGraph(Graph2D* graph)
+	{
+		m_Graph = graph;
+	}
+	void SetPlayer(Player* player)
+	{
+		m_player = player;
+	}
 protected:
+	float GuardRadius = 200.0f;
 
-	Player* m_player;
 	FollowPathBehaviour* m_followPathBehaviour;
+	SeekBehaviour* m_seekBehaviour;
+	Player* m_player;
 
-
+	
+	Graph2D* m_Graph;
 private:
 };

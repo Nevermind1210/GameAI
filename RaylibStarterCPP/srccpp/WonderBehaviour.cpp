@@ -4,6 +4,8 @@
 
 WonderBehaviour::WonderBehaviour()
 {
+	m_target.x = 500;
+	m_target.y = 500;
 }
 
 WonderBehaviour::~WonderBehaviour()
@@ -16,8 +18,8 @@ void WonderBehaviour::Update(GameObject* obj, float deltaTime)
 	float distToTarget = Vector2Distance(m_target, obj->GetPosition());
 	if (distToTarget < m_targetRadius)
 	{
-		m_target.x = rand() % 1280;
-		m_target.y = rand() % 720;
+		m_target.x = rand() % 1180 + 100;
+		m_target.y = rand() % 620 + 100;
 	}
 	Vector2 dirToTarget = Vector2Subtract(m_target, obj->GetPosition());
 	dirToTarget = Vector2MultiplyV(Vector2Normalize(dirToTarget), { 100,100 });

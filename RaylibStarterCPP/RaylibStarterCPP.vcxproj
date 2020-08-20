@@ -168,6 +168,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="srccpp\PatrollingGuard.cpp" />
     <ClCompile Include="srccpp\StandingGuard.cpp" />
     <ClCompile Include="srccpp\Graph2D.cpp" />
     <ClCompile Include="srccpp\Graph2DEditor.cpp" />
@@ -180,6 +181,7 @@
     <ClCompile Include="srccpp\SeekBehaviour.cpp" />
     <ClCompile Include="srccpp\Player.cpp" />
     <ClCompile Include="srccpp\WonderBehaviour.cpp" />
+    <ClCompile Include="srccpp\WonderingGuard.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Graph.h" />
@@ -195,6 +197,8 @@
     <ClInclude Include="inc\SeekBehaviour.h" />
     <ClInclude Include="inc\WonderBehaviour.h" />
     <ClInclude Include="inc\StandingGuard.h" />
+    <ClInclude Include="inc\PatrollingGuard.h" />
+    <ClInclude Include="inc\WonderingGuard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

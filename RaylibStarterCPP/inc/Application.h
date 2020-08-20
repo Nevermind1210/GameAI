@@ -28,10 +28,12 @@ private:
 
 	GameObject* m_player1 = nullptr;
 	GameObject* m_standingGuard = nullptr;
-	GameObject* m_player3 = nullptr;
+	GameObject* m_patrollingGuard = nullptr;
+	GameObject* m_wonderingGuard = nullptr;
 
 	
 	Graph2DEditor* m_graphEditor = nullptr;
 	Graph2D* m_graph = nullptr;
+	
 };
 

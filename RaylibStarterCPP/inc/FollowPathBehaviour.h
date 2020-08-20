@@ -1,6 +1,7 @@
 #pragma once
 #include "raymath.h"
 #include "Behaviour.h"
+#include "GameObject.h"
 #include <vector>
 class Player;
 class FollowPathBehaviour : public Behaviour
@@ -22,6 +23,7 @@ public:
 protected:
 
 	Player* m_player;
+	FollowPathBehaviour* m_followPathBehaviour;
 	std::vector<Vector2> m_path;
 	float m_targetRadius = 35.0f;
 private:

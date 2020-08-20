@@ -6,6 +6,8 @@
 #include "Graph2D.h"
 #include "Graph2DEditor.h"
 #include "StandingGuard.h"
+#include "PatrollingGuard.h"
+#include "WonderingGuard.h"
 
 Application::Application(int windowWidth, int windowHeight , const char *title) :
 	m_windowWidth(windowWidth), m_windowHeight(windowHeight), m_windowTitle(title)
@@ -23,9 +25,10 @@ void Application::Update(float deltaTime)
 
 	m_player1->Update(deltaTime);
 	m_standingGuard->Update(deltaTime);
-	m_player3->Update(deltaTime);
-	m_graphEditor->Update(deltaTime);
+	m_patrollingGuard->Update(deltaTime);
+	m_wonderingGuard->Update(deltaTime);
 
+	m_graphEditor->Update(deltaTime);
 }
 
 
@@ -50,17 +53,38 @@ void Application::Run()
 
 void Application::Load()
 {
-	m_player1 = new Player();
-	m_standingGuard = new StandingGuard();
-	m_player3 = new Player();
+	//Loading All Player related stuff
+	auto player = new Player();
+	player->SetPosition({ m_windowWidth * 0.25f , m_windowHeight / 2.0f });
+	player->SetFriction(1.0f);
+	m_player1 = player;
+
+	//Loading All Standing Guard Stuff
+	auto Sguard = new StandingGuard();
+	Sguard = new StandingGuard();
+	Sguard->SetPlayer(player);
+	Sguard->SetGraph(m_graph);
+	Sguard->SetPosition({ m_windowWidth * 0.45f , m_windowHeight / 2.0f });
+	Sguard->SetFriction(1.0f);
+	m_standingGuard = Sguard;
+
+	//Loading All Patrolling Guard Stuff
+	auto Pguard = new PatrollingGuard(); 
+	Pguard->SetPosition({ m_windowWidth * 0.65f , m_windowHeight / 2.0f });
+	Pguard->SetFriction(1.0f);
+	m_patrollingGuard = Pguard;
+
+	//Loading All Wondering Guard Stuff
+	auto WGuard = new WonderingGuard();
+	WGuard->SetPosition({ m_windowWidth * 0.95f , m_windowHeight / 5.0f });
+	WGuard->SetFriction(1.0f);
+	m_wonderingGuard = WGuard;
+
+
+	//Node related stuff here. 
 	m_graph = new Graph2D();
+	
 	m_graphEditor = new Graph2DEditor();
-	m_player1->SetPosition({ m_windowWidth * 0.25f , m_windowHeight / 2.0f });
-	m_standingGuard->SetPosition({ m_windowWidth * 0.45f , m_windowHeight / 2.0f });
-	m_player3->SetPosition({ m_windowWidth * 0.65f , m_windowHeight / 2.0f });
-	m_player1->SetFriction(1.0f);
-	m_standingGuard->SetFriction(1.0f);
-	m_player3->SetFriction(1.0f);
 
 	int numRows = 23;
 	int numCols = 41;
@@ -78,7 +102,6 @@ void Application::Load()
 				});
 		}
 	}
-
 	for (auto node : m_graph->GetNodes())
 	{
 		std::vector<Graph2D::Node*> nearbyNodes;
@@ -102,12 +125,12 @@ void Application::Unload()
 {
 	m_player1 = nullptr;
 	m_standingGuard = nullptr;
-	m_player3 = nullptr;
+	m_patrollingGuard = nullptr;
 	m_graphEditor = nullptr;
 	m_graph = nullptr;
 	delete m_player1;
 	delete m_standingGuard;
-	delete m_player3;
+	delete m_patrollingGuard;
 	delete m_graphEditor;
 	delete m_graph;
 }
@@ -121,7 +144,8 @@ void Application::Draw()
 
 	m_player1->Draw();
 	m_standingGuard->Draw();
-	m_player3->Draw();
+	m_patrollingGuard->Draw();
+	m_wonderingGuard->Draw();
 	m_graphEditor->Draw();
 
 	m_graph = new Graph2D();

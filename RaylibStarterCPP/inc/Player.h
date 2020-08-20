@@ -7,6 +7,8 @@ class KeyboardBehaviour;
 class SeekBehaviour;
 class WonderBehaviour;
 class FollowPathBehaviour;
+class Graph2D;
+
 class Player : public GameObject
 {
 public: 
@@ -15,6 +17,7 @@ public:
 
 	virtual void Update(float deltaTime);
 	virtual void Draw();
+	Graph2D* m_graph;
 protected:
 
 	KeyboardBehaviour* m_kbBehaviour;

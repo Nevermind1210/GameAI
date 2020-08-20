@@ -130,6 +130,7 @@ public:
 
 protected:
 
+
 	std::vector<Node*> m_nodes;
 private:
 };

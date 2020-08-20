@@ -31,8 +31,10 @@ void GameObject::Update(float deltaTime)
 
 void GameObject::Draw()
 {
-	if (m_behaviour != nullptr)
-		m_behaviour->Draw(this);
+
+	//if (m_behaviour != nullptr)
+		//m_behaviour->Draw(this);
+
 }
 
 
