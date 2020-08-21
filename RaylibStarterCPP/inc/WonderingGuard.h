@@ -1,7 +1,7 @@
 #pragma once
 #include "GameObject.h"
 
-class WonderingBehaviour;
+class WonderBehaviour;
 class FollowPathBehaviour;
 
 class WonderingGuard : public GameObject

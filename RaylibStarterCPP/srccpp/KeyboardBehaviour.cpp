@@ -8,7 +8,7 @@ KeyboardBehaviour::KeyboardBehaviour() : Behaviour()
 	m_downKey = KEY_S;
 	m_leftKey = KEY_A;
 	m_rightKey = KEY_D;
-	m_moveForce = 100;
+	m_moveForce = 500;
 }
 
 KeyboardBehaviour::KeyboardBehaviour(int upKey, int downKey, int leftKey, int rightKey, float moveForce) :

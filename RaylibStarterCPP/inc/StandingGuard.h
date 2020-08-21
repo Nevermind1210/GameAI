@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GameObject.h"
+#include <functional>
 
 class FollowPathBehaviour;
 class SeekBehaviour;
@@ -18,20 +19,23 @@ public:
 
 	void SetGraph(Graph2D* graph)
 	{
-		m_Graph = graph;
+		m_graph = graph;
 	}
+
 	void SetPlayer(Player* player)
 	{
 		m_player = player;
 	}
+
 protected:
 	float GuardRadius = 200.0f;
 
 	FollowPathBehaviour* m_followPathBehaviour;
 	SeekBehaviour* m_seekBehaviour;
 	Player* m_player;
+	Graph2D* m_graph;
 
-	
-	Graph2D* m_Graph;
+
+	std::function<void()> m_onAriveFn;
 private:
 };

@@ -20,11 +20,12 @@ public:
 	const float& GetTargetRadius() const;
 	void SetTargetRadius(const float& radius);
 
+	std::vector<Vector2> m_path;
+
 protected:
 
 	Player* m_player;
 	FollowPathBehaviour* m_followPathBehaviour;
-	std::vector<Vector2> m_path;
 	float m_targetRadius = 35.0f;
 private:
 };

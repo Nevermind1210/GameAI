@@ -1,6 +1,5 @@
 #include "SeekBehaviour.h"
 #include "GameObject.h"
-#include <time.h>
 
 SeekBehaviour::SeekBehaviour() : Behaviour()
 {

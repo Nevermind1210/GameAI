@@ -25,15 +25,6 @@ void WonderingGuard::Update(float deltaTime)
 	SetBehaviour(m_wonderBehaviour);
 
 
-	//if () //if player is close
-	//{
-	//	// TODO:chase player;
-
-	//}
-
-	//This logic is similar to what standing does, this time it has the advantage of walking around
-	// if the player is found within the radius it chases and gives up at a certain distance.
-
 	GameObject::Update(deltaTime);
 }
 

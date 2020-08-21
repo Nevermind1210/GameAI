@@ -53,6 +53,9 @@ void Application::Run()
 
 void Application::Load()
 {
+	//Node related stuff here. 
+	m_graph = new Graph2D();
+
 	//Loading All Player related stuff
 	auto player = new Player();
 	player->SetPosition({ m_windowWidth * 0.25f , m_windowHeight / 2.0f });
@@ -79,12 +82,6 @@ void Application::Load()
 	WGuard->SetPosition({ m_windowWidth * 0.95f , m_windowHeight / 5.0f });
 	WGuard->SetFriction(1.0f);
 	m_wonderingGuard = WGuard;
-
-
-	//Node related stuff here. 
-	m_graph = new Graph2D();
-	
-	m_graphEditor = new Graph2DEditor();
 
 	int numRows = 23;
 	int numCols = 41;
@@ -147,9 +144,6 @@ void Application::Draw()
 	m_patrollingGuard->Draw();
 	m_wonderingGuard->Draw();
 	m_graphEditor->Draw();
-
-	m_graph = new Graph2D();
-
 
 	EndDrawing();
 }
