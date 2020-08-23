@@ -11,7 +11,6 @@ Graph2D::~Graph2D()
 
 bool Graph2D::FindPathDijk(Node* startNode, std::function<bool(Node*)> isGoalNode, std::list<Node*>& out_path)
 {
-	//int currentStep = 0;
 	std::list<PFNode*>stack;
 	std::list<PFNode*>visted;
 

@@ -5,6 +5,10 @@ Player::Player()
 {
 	m_kbBehaviour = new KeyboardBehaviour();
 	SetBehaviour(m_kbBehaviour);
+	
+	//Setting up the images.
+	PlayerImg = LoadImage("../Sprites/player.png");
+	PlayerTex = LoadTextureFromImage(PlayerImg);
 }
 
 Player::~Player()
@@ -29,11 +33,11 @@ void Player::Update(float deltaTime)
 
 void Player::Draw()
 {
-	//GameObject::Draw();
-
 	//Debug draw
 	Vector2 targetHeading = Vector2Add(m_position, m_velocity);
-	DrawCircle(m_position.x, m_position.y, 8, GRAY);
+
+	//This is the player texture.
+	DrawTexture(PlayerTex, m_position.x - PlayerTex.width / 2, m_position.y - PlayerTex.width / 2, LIGHTGRAY);
 
 	DrawLine(m_position.x, m_position.y,
 		targetHeading.x, targetHeading.y, DARKGRAY);

@@ -9,6 +9,11 @@ WonderingGuard::WonderingGuard()
 	m_wonderBehaviour = new WonderBehaviour();
 
 	SetBehaviour(m_wonderBehaviour);
+	
+	//Setting up the images.
+	WGuardImg = LoadImage("../Sprites/WGuard.png");
+	WGuardTex = LoadTextureFromImage(WGuardImg);
+
 }
 
 WonderingGuard::~WonderingGuard()
@@ -34,7 +39,9 @@ void WonderingGuard::Draw()
 	m_behaviour->Draw(this);
 	//Debug draw
 	Vector2 targetHeading = Vector2Add(m_position, m_velocity);
-	DrawCircle(m_position.x, m_position.y, 8, GREEN);
+
+	//Drawing the WGuard Texture!
+	DrawTexture(WGuardTex, m_position.x - WGuardTex.width / 2, m_position.y - WGuardTex.width / 2, GREEN);
 
 	DrawLine(m_position.x, m_position.y,
 		targetHeading.x, targetHeading.y, DARKGRAY);

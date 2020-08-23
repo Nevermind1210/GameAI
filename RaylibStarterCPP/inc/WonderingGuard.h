@@ -17,7 +17,7 @@ protected:
 	WonderBehaviour* m_wonderBehaviour;
 	FollowPathBehaviour* m_followPathBehaviour;
 private:
-
-
+	Image WGuardImg;
+	Texture2D WGuardTex;
 };
 

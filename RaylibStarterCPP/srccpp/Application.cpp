@@ -6,8 +6,8 @@
 #include "Graph2D.h"
 #include "Graph2DEditor.h"
 #include "StandingGuard.h"
-#include "PatrollingGuard.h"
 #include "WonderingGuard.h"
+#include "PatrollingGuard.h"
 
 Application::Application(int windowWidth, int windowHeight , const char *title) :
 	m_windowWidth(windowWidth), m_windowHeight(windowHeight), m_windowTitle(title)
@@ -72,7 +72,9 @@ void Application::Load()
 	m_standingGuard = Sguard;
 
 	//Loading All Patrolling Guard Stuff
-	auto Pguard = new PatrollingGuard(); 
+	auto Pguard = new PatrollingGuard();
+	Pguard->SetPlayer(player);
+	Pguard->SetGraph(m_graph);
 	Pguard->SetPosition({ m_windowWidth * 0.65f , m_windowHeight / 2.0f });
 	Pguard->SetFriction(1.0f);
 	m_patrollingGuard = Pguard;

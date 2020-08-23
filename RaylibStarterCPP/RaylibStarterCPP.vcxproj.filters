@@ -48,10 +48,10 @@
     <ClCompile Include="srccpp\Graph2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="srccpp\StandingGuard.cpp">
+    <ClCompile Include="srccpp\PatrollingGuard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="srccpp\PatrollingGuard.cpp">
+    <ClCompile Include="srccpp\StandingGuard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="srccpp\WonderingGuard.cpp">
@@ -59,16 +59,28 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="inc\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="inc\Behaviour.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="inc\Application.h">
+    <ClInclude Include="inc\FleeBehaviour.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\FollowPathBehaviour.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inc\GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="inc\SeekBehaviour.h">
+    <ClInclude Include="inc\Graph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Graph2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Graph2DEditor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inc\KeyboardBehaviour.h">
@@ -77,28 +89,16 @@
     <ClInclude Include="inc\Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="inc\WonderBehaviour.h">
+    <ClInclude Include="inc\SeekBehaviour.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="inc\FollowPathBehaviour.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\FleeBehaviour.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\Graph2DEditor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\Graph2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\Graph.h">
+    <ClInclude Include="inc\PatrollingGuard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inc\StandingGuard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="inc\PatrollingGuard.h">
+    <ClInclude Include="inc\WonderBehaviour.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inc\WonderingGuard.h">

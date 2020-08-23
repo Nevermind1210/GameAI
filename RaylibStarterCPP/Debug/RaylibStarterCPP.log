@@ -1,10 +1,11 @@
 ﻿  StandingGuard.cpp
-C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(87,43): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(87,26): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(90,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(90,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(93,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(93,16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(92,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(92,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  RaylibStarterCPP.vcxproj -> C:\Users\s200501\source\repos\GameAI\bin\Win32\Debug\GameAI.exe
+C:\Users\xavie\source\repos\GameAI\RaylibStarterCPP\inc\FollowPathBehaviour.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\xavie\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(86,43): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\xavie\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(86,26): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\xavie\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(91,74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\xavie\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(91,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\xavie\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(94,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\xavie\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(94,16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\xavie\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(93,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\xavie\source\repos\GameAI\RaylibStarterCPP\srccpp\StandingGuard.cpp(93,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  RaylibStarterCPP.vcxproj -> C:\Users\xavie\Source\Repos\GameAI\bin\Win32\Debug\GameAI.exe

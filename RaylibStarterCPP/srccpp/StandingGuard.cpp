@@ -1,6 +1,5 @@
-#include "StandingGuard.h"
+﻿#include "StandingGuard.h"
 #include "FollowPathBehaviour.h"
-#include "WonderBehaviour.h"
 #include "Player.h"
 #include "Graph2D.h"
 #include <iostream>
@@ -11,9 +10,9 @@ StandingGuard::StandingGuard() : GameObject()
 	m_followPathBehaviour = new FollowPathBehaviour();
 	m_followPathBehaviour->SetTargetRadius(20);
 
-
-	
-	SetBehaviour(nullptr);
+	//Setting up images ᵃᵍᵃᶦⁿ...
+	SGuardImg = LoadImage("../Sprites/SGuard.png");
+	SGuardTex = LoadTextureFromImage(SGuardImg);
 }
 
 StandingGuard::~StandingGuard()
@@ -87,7 +86,9 @@ void StandingGuard::Draw()
 	DrawCircle(GetPosition().x, GetPosition().y, 200, {255,215,68,100});
 	//Debug draw
 	Vector2 targetHeading = Vector2Add(m_position, m_velocity);
-	DrawCircle(m_position.x, m_position.y, 8, PURPLE);
+
+	//Drawing texture here!
+	DrawTexture(SGuardTex, m_position.x - SGuardTex.width / 2, m_position.y - SGuardTex.width / 2, PURPLE);
 
 	DrawLine(m_position.x, m_position.y,
 		targetHeading.x, targetHeading.y, DARKGRAY);

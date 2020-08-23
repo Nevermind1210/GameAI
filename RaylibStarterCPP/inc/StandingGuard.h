@@ -35,7 +35,7 @@ protected:
 	Player* m_player;
 	Graph2D* m_graph;
 
-
-	std::function<void()> m_onAriveFn;
 private:
+	Image SGuardImg;
+	Texture2D SGuardTex;
 };

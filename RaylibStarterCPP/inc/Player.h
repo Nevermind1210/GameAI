@@ -18,4 +18,6 @@ protected:
 
 	KeyboardBehaviour* m_kbBehaviour;
 private:
+	Image PlayerImg;
+	Texture2D PlayerTex;
 };
