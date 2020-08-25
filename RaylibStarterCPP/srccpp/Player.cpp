@@ -1,6 +1,5 @@
 #include "Player.h"
 #include "KeyboardBehaviour.h"
-#include <iostream>
 Player::Player()
 {
 	m_kbBehaviour = new KeyboardBehaviour();
