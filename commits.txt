@@ -1,3 +1,9 @@
+commit 305bf32b296149d995fbc6d36a1966e1a83c4b83
+Author: Xavier Arias <s200501@students.aie.edu.au>
+Date:   Wed Sep 2 14:37:23 2020 +1000
+
+    Release build
+
 commit 9eb9d8cd5871628a59fb2e77740704d7fe637309
 Author: Xavier Arias <s200501@students.aie.edu.au>
 Date:   Wed Sep 2 14:28:12 2020 +1000

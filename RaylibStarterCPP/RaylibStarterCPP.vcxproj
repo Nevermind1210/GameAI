@@ -168,6 +168,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="srccpp\ChaseBehaviour.cpp" />
     <ClCompile Include="srccpp\PatrollingGuard.cpp" />
     <ClCompile Include="srccpp\StandingGuard.cpp" />
     <ClCompile Include="srccpp\Graph2D.cpp" />
@@ -184,6 +185,7 @@
     <ClCompile Include="srccpp\WonderingGuard.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="inc\ChaseBehaviour.h" />
     <ClInclude Include="inc\Graph.h" />
     <ClInclude Include="inc\Graph2D.h" />
     <ClInclude Include="inc\Graph2DEditor.h" />

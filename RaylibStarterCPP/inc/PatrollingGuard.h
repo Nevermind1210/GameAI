@@ -5,7 +5,7 @@
 class Player;
 class FollowPathBehaviour;
 class Graph2D;
-class SeekBehaviour;
+class ChaseBehaviour;
 
 class PatrollingGuard : public GameObject
 {
@@ -37,9 +37,8 @@ protected:
 	float GuardRadius = 200.0f;
 
 	Player* m_player;
-	FollowPathBehaviour* m_followPathBehaviourAStar;
+	ChaseBehaviour* m_chasePlayerBehaviour;
 	FollowPathBehaviour* m_followPathBehaviourHCP;
-	SeekBehaviour* m_seekBehaviour;
 
 	Graph2D* m_graph;
 
@@ -48,6 +47,5 @@ protected:
 private:
 	Image PGuardImg;
 	Texture2D PGuardTex;
-
 };
 

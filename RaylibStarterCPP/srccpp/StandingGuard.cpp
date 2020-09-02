@@ -70,7 +70,7 @@ void StandingGuard::Update(float deltaTime)
 		}
 	}
 
-	//I need this logic to be agent awaiting player to hit a certain range and once reached range is to chase(seek)
+	//this logic to be agent awaiting player to hit a certain range and once reached range is to chase(seek)
 	//the player to a certain distance, if player successfully loses range he returns to his old position.
 	//otherwise just stay standing until then.
 

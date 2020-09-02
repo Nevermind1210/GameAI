@@ -57,6 +57,9 @@
     <ClCompile Include="srccpp\WonderingGuard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="srccpp\ChaseBehaviour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Application.h">
@@ -102,6 +105,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inc\WonderingGuard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ChaseBehaviour.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

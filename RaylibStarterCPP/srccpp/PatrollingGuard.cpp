@@ -1,16 +1,15 @@
 #include "PatrollingGuard.h"
 #include "FollowPathBehaviour.h"
-#include "SeekBehaviour.h"
 #include <iostream>
 #include "raylib.h"
 #include "Player.h"
 #include "Graph2D.h"
+#include "ChaseBehaviour.h"
 
 PatrollingGuard::PatrollingGuard()
 {
 	m_followPathBehaviourHCP = new FollowPathBehaviour();
-	m_followPathBehaviourAStar = new FollowPathBehaviour();
-	m_seekBehaviour = new SeekBehaviour();
+	m_chasePlayerBehaviour = new ChaseBehaviour();
 
 	m_followPathBehaviourHCP->SetPath(hardCodedPath);
 	SetBehaviour(m_followPathBehaviourHCP);
@@ -24,9 +23,9 @@ PatrollingGuard::~PatrollingGuard()
 {
 	SetBehaviour(nullptr);
 	m_followPathBehaviourHCP= nullptr;
-	m_followPathBehaviourAStar = nullptr;
+	m_chasePlayerBehaviour = nullptr;
 
-	delete m_followPathBehaviourAStar;
+	delete m_chasePlayerBehaviour;
 	delete m_followPathBehaviourHCP;
 }
 
@@ -35,21 +34,11 @@ void PatrollingGuard::Update(float deltaTime)
 	float distToTarget = Vector2Distance(GetPosition(), m_player->GetPosition());
 	if (distToTarget < GuardRadius)
 	{
-		std::vector<Graph2D::Node*>GuardNode;
-		m_graph->GetNearbyNodes(GetPosition(), 40, GuardNode);
-		std::vector<Graph2D::Node*>PlayerNode;
-		m_graph->GetNearbyNodes(m_player->GetPosition(), 40, PlayerNode);
-		std::list<Graph2D::Node*>PathFound;
-		m_graph->FindPathAStar(GuardNode[0], PlayerNode[0], PathFound);
-
-		std::vector<Vector2>FinalDes;
-
-		for (auto node : PathFound)
+		if (GetBehaviour() != m_chasePlayerBehaviour)
 		{
-			FinalDes.push_back(node->data);
+			m_chasePlayerBehaviour->SetPath(m_player);
+			SetBehaviour(m_chasePlayerBehaviour);
 		}
-		m_followPathBehaviourAStar->SetPath(FinalDes);
-		SetBehaviour(m_followPathBehaviourAStar);
 	}
 	else
 	{
