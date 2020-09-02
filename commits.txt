@@ -1,3 +1,9 @@
+commit 9eb9d8cd5871628a59fb2e77740704d7fe637309
+Author: Xavier Arias <s200501@students.aie.edu.au>
+Date:   Wed Sep 2 14:28:12 2020 +1000
+
+    This build of the game fixes the Patrolling Guard, and it behaves correctly.
+
 commit 207907e1c3cbffff2f9248275d81d48166c424ed
 Author: NegativeVibes <xavier_rate@outlook.com>
 Date:   Wed Aug 26 07:50:28 2020 +1000
