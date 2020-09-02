@@ -28,21 +28,22 @@ void StandingGuard::Update(float deltaTime)
 	float distToTarget = Vector2Distance(GetPosition(), m_player->GetPosition());
 
 	if(distToTarget < GuardRadius)
-	{		
+	{	
+		//This collects the data of the Guard
 		std::vector<Graph2D::Node*>GuardNode;
-		m_graph->GetNearbyNodes(GetPosition(), 40, GuardNode);
+		m_graph->GetNearbyNodes(GetPosition(), 40, GuardNode); // Grabs itself
 		std::vector<Graph2D::Node*>PlayerNode;
-		m_graph->GetNearbyNodes(m_player->GetPosition(), 40, PlayerNode);
+		m_graph->GetNearbyNodes(m_player->GetPosition(), 40, PlayerNode); //Grabs player info
 		std::list<Graph2D::Node*>PathFound;
-		m_graph->FindPathAStar(GuardNode[0], PlayerNode[0], PathFound);
+		m_graph->FindPathAStar(GuardNode[0], PlayerNode[0], PathFound); // combine it
 
-		std::vector<Vector2>FinalDes;
+		std::vector<Vector2>FinalDes; // The combination.
 
-		for(auto node: PathFound)
+		for(auto node: PathFound) // comparing
 		{
-			FinalDes.push_back(node->data);
+			FinalDes.push_back(node->data); // and pushing the nodes 
 		}
-		m_followPathBehaviour->SetPath(FinalDes);
+		m_followPathBehaviour->SetPath(FinalDes); // and volia it follows the player
 		SetBehaviour(m_followPathBehaviour);		
 	}
 	else
@@ -67,7 +68,6 @@ void StandingGuard::Update(float deltaTime)
 		{
 			SetBehaviour(nullptr);
 		}
-		//TODO: TRY AND MAKE A ONARRIVE FUNCTION TO SET BEHVAIOUR BACK TO NULL SO HE GOES BACK TO JUST STANDING
 	}
 
 	//I need this logic to be agent awaiting player to hit a certain range and once reached range is to chase(seek)

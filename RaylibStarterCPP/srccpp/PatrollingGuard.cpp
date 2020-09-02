@@ -5,11 +5,16 @@
 #include "raylib.h"
 #include "Player.h"
 #include "Graph2D.h"
+
 PatrollingGuard::PatrollingGuard()
 {
-	m_followPathBehaviour = new FollowPathBehaviour();
+	m_followPathBehaviourHCP = new FollowPathBehaviour();
+	m_followPathBehaviourAStar = new FollowPathBehaviour();
 	m_seekBehaviour = new SeekBehaviour();
-	
+
+	m_followPathBehaviourHCP->SetPath(hardCodedPath);
+	SetBehaviour(m_followPathBehaviourHCP);
+
 	//The Texture Setup!
 	PGuardImg = LoadImage("../Sprites/PGuard.png");
 	PGuardTex = LoadTextureFromImage(PGuardImg);
@@ -18,19 +23,15 @@ PatrollingGuard::PatrollingGuard()
 PatrollingGuard::~PatrollingGuard()
 {
 	SetBehaviour(nullptr);
-	m_followPathBehaviour = nullptr;
-	m_followPathBehaviour = nullptr;
+	m_followPathBehaviourHCP= nullptr;
+	m_followPathBehaviourAStar = nullptr;
 
-	delete m_followPathBehaviour;
-	delete m_followPathBehaviour;
+	delete m_followPathBehaviourAStar;
+	delete m_followPathBehaviourHCP;
 }
 
 void PatrollingGuard::Update(float deltaTime)
 {
-	std::vector<Vector2> hardCodedPath = {
-{100, 100}, {(float)GetScreenWidth() - 100, 100}, {(float)GetScreenWidth() - 100, (float)GetScreenHeight() - 100}, {100, (float)GetScreenHeight() - 100}
-		};
-
 	float distToTarget = Vector2Distance(GetPosition(), m_player->GetPosition());
 	if (distToTarget < GuardRadius)
 	{
@@ -47,14 +48,17 @@ void PatrollingGuard::Update(float deltaTime)
 		{
 			FinalDes.push_back(node->data);
 		}
-		m_followPathBehaviour->SetPath(FinalDes);
-		SetBehaviour(m_followPathBehaviour);
+		m_followPathBehaviourAStar->SetPath(FinalDes);
+		SetBehaviour(m_followPathBehaviourAStar);
 	}
-	else if (distToTarget < GuardRadius)
+	else
 	{
-		
-		m_followPathBehaviour->SetPath(hardCodedPath);
-		SetBehaviour(m_followPathBehaviour);
+		//This if statement, checks for the behaviour and sets it.
+		if (GetBehaviour() != m_followPathBehaviourHCP)
+		{
+			m_followPathBehaviourHCP->SetPath(hardCodedPath);
+			SetBehaviour(m_followPathBehaviourHCP);
+		}
 	}
 	GameObject::Update(deltaTime);
 }

@@ -1,0 +1,187 @@
+commit 207907e1c3cbffff2f9248275d81d48166c424ed
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Wed Aug 26 07:50:28 2020 +1000
+
+    Small changes, player speed noteably..
+
+commit 6c2603b03d41b3e7eaee81705f96380419af3b15
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Mon Aug 24 00:20:08 2020 +1000
+
+    So my patrolling guard is behaving rather odd, it chases the player in view and then when player leaves view it goes from last player pos and goes 5 nodes back and back to player pos... its PATROLLING but not exactly what I had in mind, oh and theres sprites now hurray?
+
+commit 73d0737594d27dbabec706495a4aa337e6d846af
+Author: Xavier Arias <s200501@students.aie.edu.au>
+Date:   Fri Aug 21 17:00:32 2020 +1000
+
+    This is the bare minimum of the AIAssessment its tech and algorith are there and they work! But its really boring... I need to add images to represent the guards... and theres 1 more error that when theres no nodes to be found it crashes at nullptr
+
+commit f7981ba4361595e2b076f38958db13d7cc426eed
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Thu Aug 20 17:17:48 2020 +1000
+
+    All agents are done, StandingGuard when player hits radius it crashes with a Vector error FIX NOW
+
+commit 215300d38889d34713975c0b306507a010d09167
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Wed Aug 19 16:57:53 2020 +1000
+
+    PathFinding is done. Now its padding its logic and making each agent independent
+
+commit 37c4f7897965258dafa187c53b180fd34cbf3a64
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Wed Aug 19 15:32:07 2020 +1000
+
+    Now placed the nodes into GameAI, Wandering least a form of wondering is working, now I need to utilize the graph in some fashion now its to create the pathFinding
+
+commit 83302e510c06ce67236ff81cf0312af9c1d198dd
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Tue Aug 18 20:34:05 2020 +1000
+
+    Astar done and tested, now I need to do wandering and then its off to do some cool graphical gamey stuff
+
+commit 3df3eff06922216948e241b5b1a1cbc88d60f1af
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Fri Aug 14 17:01:40 2020 +1000
+
+    Starting A-Star... Wandering can hold now...
+
+commit 5f7debe1ea2123c683fa6ff7a994f92be575a79d
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Fri Aug 14 14:38:11 2020 +1000
+
+    We have Dijkstra's! Next up is wandering
+
+commit b12a23f3791148912d921a348df57f49c1ff7d36
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Thu Aug 13 16:56:29 2020 +1000
+
+    Dijkstra shortest path day, was doing the body work of it and moved the struct to Graph.h now, less of a pain to manage the struct and its properties. this and Wandering are todo!
+
+commit d35aa13742a13c77a4f905728bf3dcb998c1db83
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Wed Aug 12 16:58:03 2020 +1000
+
+    Fixed the issue of BFS and DFS not printing now it does! And now done some groundworks for Dijkstra short path algorithm, now focusing on that now... after wandering and hopefully! to do some actual game.
+
+commit b3f49caa428e90d8b793f77b067254ba9b6270ad
+Author: Xavier Arias <s200501@students.aie.edu.au>
+Date:   Wed Aug 12 12:16:27 2020 +1000
+
+    Seeking now seeks and STOPS at the radius instead of veering off course and sliding
+
+commit 3b9906891f60b4655b7addf4eb683c6f3015c78c
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Wed Aug 12 08:10:35 2020 +1000
+
+    Pushing small changes
+
+commit b443d3ad66cb42ae8ac884f2bcd8ea0fd24905d7
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Fri Aug 7 16:57:38 2020 +1000
+
+    Code...
+
+commit b306f33a168b9caff518400ed3f5cb0098d68d13
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Thu Aug 6 22:21:26 2020 +1000
+
+    Adding bit of code for wandering, some other code to add for preperations
+
+commit 5d56add6c0e9802d6055dac7e1aa577cc04e7f20
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Fri Jul 31 21:11:21 2020 +1000
+
+    Graph testing stuff
+
+commit de798ec86f43e7d1207750e7f71100d2536a9c79
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Fri Jul 31 11:17:26 2020 +1000
+
+    deleted debug junk
+
+commit dd264b63ad966f6ff04c943e8689b0c747cafb1c
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Fri Jul 31 11:15:19 2020 +1000
+
+    added raylib binaries
+
+commit b7f584d2c19b56e7944790a9033552edff5d1724
+Author: Xavier Arias <s200501@students.aie.edu.au>
+Date:   Thu Jul 30 17:11:22 2020 +1000
+
+    removing temporary files
+
+commit 75b58e4f68e3d7a6eb15456616ba5ccc81c938af
+Merge: ce12dd9 09db214
+Author: Xavier Arias <s200501@students.aie.edu.au>
+Date:   Thu Jul 30 17:10:04 2020 +1000
+
+    fixed merge conflicts
+
+commit ce12dd9023e43670acee7d3ec7a4662278d26750
+Author: Xavier Arias <s200501@students.aie.edu.au>
+Date:   Thu Jul 30 17:03:48 2020 +1000
+
+    Did the graph DONE
+
+commit eb173be348deae9530153eeddc478314380d4dc9
+Author: Xavier Arias <s200501@students.aie.edu.au>
+Date:   Thu Jul 30 16:56:33 2020 +1000
+
+    Lots of things happening at once, bad habit, Graph is now done and I can create dynamic nodes and linked them (Reminds me of a certain assessment) and thats it... theres some little logical and design choices I'll attempt to try.
+
+commit 09db21412ef24f0a25fd9148c34a33f97660dbf1
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Wed Jul 29 16:55:44 2020 +1000
+
+    Made a new project for graphing nodes and make a small tweak when clicking to a point at any point you can interupt it with the WASD keys! Like some moba games.... Neat.
+
+commit aa5397e2ae07fcd4a403bd23bd893d619691facf
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Wed Jul 29 12:09:49 2020 +1000
+
+    Did the layout of the next behaviour implementation Flee and what not, finished SeekBehaviour and tweaked some clicking behaviour etc.
+
+commit d76c6b0a127e7db940cabec6882489a35c3e7c4d
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Fri Jul 24 16:56:01 2020 +1000
+
+    Added a player class that inheritence all control and drawing make it all neat and orderly..?
+
+commit d6ac628f7724d492d13019563458e457dda4ad98
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Fri Jul 24 14:59:09 2020 +1000
+
+    Well now ALOT has happened now, I made a player(circle) two of them infact! Anywho they move and grove and keyboard functionailty works now
+
+commit 74a8b22b327a5c3be499013a9464cca2d561d4d0
+Merge: 14dd5b3 4b800d3
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Thu Jul 23 16:54:06 2020 +1000
+
+    Merge branch 'master' of https://github.com/Nevermind1210/GameAI
+
+commit 14dd5b33aced73f6b43019c61082329db9631bfd
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Thu Jul 23 16:53:41 2020 +1000
+
+    Adding the basis of the A.I behaviour and inheritence not been compiled! :(
+
+commit 4b800d3d9ce69b89d01c5808f29011d3d9d4a456
+Author: Xavier Arias <xavier_rate@outlook.com>
+Date:   Thu Jul 23 11:48:28 2020 +1000
+
+    Update README.md
+
+commit b247e87db704d46f804cfd846ee9096c1551daf4
+Author: NegativeVibes <xavier_rate@outlook.com>
+Date:   Thu Jul 23 11:40:17 2020 +1000
+
+    Ready, compiled first starter screen and ready to code!
+
+commit df3a2ed2bc26e0c1b9eb4019bca37f40982124ac
+Author: Xavier Arias <xavier_rate@outlook.com>
+Date:   Thu Jul 23 11:34:34 2020 +1000
+
+    Initial commit

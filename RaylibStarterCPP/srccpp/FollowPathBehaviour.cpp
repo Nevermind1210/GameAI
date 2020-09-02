@@ -13,7 +13,6 @@ FollowPathBehaviour::~FollowPathBehaviour()
 
 void FollowPathBehaviour::Update(GameObject* obj, float deltaTime)
 {
-	// TODO: 
 	// to start with, apply a force in the direction of the first point in the m_path
 	// once we are done, we can figure out how to move to the next point
 	if (!m_path.empty())
@@ -38,6 +37,7 @@ void FollowPathBehaviour::Update(GameObject* obj, float deltaTime)
 
 void FollowPathBehaviour::Draw(GameObject* obj)
 {
+	//For debugging to see the path of the Guards.
 	if (IsKeyDown(KEY_TAB))
 	{
 		DrawCircle(m_path[0].x, m_path[0].y, m_targetRadius, { 0,255,0,100 });
