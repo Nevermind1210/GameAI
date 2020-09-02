@@ -23,7 +23,7 @@ public:
 		m_player = player;
 	}
 
-	const std::vector<Vector2>& GetTarget() const;
+	const Vector2& GetTarget() const;
 	void SetTarget(const Vector2& target);
 
 	const float& GetTargetRadius() const;
@@ -33,7 +33,7 @@ public:
 
 protected:
 	float m_targetRadius = 35.0f;
-
+	Vector2 m_target;
 	Player* m_player;
 	ChaseBehaviour* m_chasePlayerBehaviour;
 	Graph2D* m_graph;

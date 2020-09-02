@@ -35,14 +35,14 @@ void ChaseBehaviour::Draw(GameObject* obj)
 
 }
 
-const std::vector<Vector2>& ChaseBehaviour::GetPath() const
+const Vector2& ChaseBehaviour::GetTarget() const
 {
-	return m_path;
+	return m_target;
 }
 
-void ChaseBehaviour::SetPath(const std::vector<Vector2>& path)
+void ChaseBehaviour::SetTarget(const Vector2& target)
 {
-	m_path = path;
+	m_target = target;
 }
 
 const float& ChaseBehaviour::GetTargetRadius() const
@@ -54,3 +54,4 @@ void ChaseBehaviour::SetTargetRadius(const float& radius)
 {
 	m_targetRadius = radius;
 }
+

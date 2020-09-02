@@ -36,7 +36,7 @@ void PatrollingGuard::Update(float deltaTime)
 	{
 		if (GetBehaviour() != m_chasePlayerBehaviour)
 		{
-			m_chasePlayerBehaviour->SetPath(m_player);
+			m_chasePlayerBehaviour->SetTarget(m_player);
 			SetBehaviour(m_chasePlayerBehaviour);
 		}
 	}
