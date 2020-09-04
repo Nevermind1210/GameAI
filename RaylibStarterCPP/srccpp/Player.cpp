@@ -1,6 +1,6 @@
 #include "Player.h"
 #include "KeyboardBehaviour.h"
-Player::Player()
+Player::Player(Application* app) : GameObject(app)
 {
 	m_kbBehaviour = new KeyboardBehaviour();
 	SetBehaviour(m_kbBehaviour);

@@ -2,21 +2,29 @@
 #include "GameObject.h"
 
 class WonderBehaviour;
-class FollowPathBehaviour;
+class ChaseBehaviour;
 
 class WonderingGuard : public GameObject
 {
 public:
-	WonderingGuard();
+	WonderingGuard(Application* app);
 	virtual ~WonderingGuard();
+
+	void SetPlayer(Player* player)
+	{
+		m_player = player;
+	}
 
 	virtual void Update(float deltaTime);
 	virtual void Draw();
 protected:
+	float m_guardRadius = 200.0f;
 
+	Player* m_player;
 	WonderBehaviour* m_wonderBehaviour;
-	FollowPathBehaviour* m_followPathBehaviour;
+	ChaseBehaviour* m_chaseBehaviour;
 private:
+
 	Image WGuardImg;
 	Texture2D WGuardTex;
 };

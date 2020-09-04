@@ -4,6 +4,7 @@
 #include "GameObject.h"
 #include <vector>
 class Player;
+class Graph2D;
 class ChaseBehaviour : public Behaviour
 {
 public:
@@ -12,11 +13,6 @@ public:
 
 	virtual void Update(GameObject* obj, float deltaTime);
 	virtual void Draw(GameObject* obj);
-
-	void SetGraph(Graph2D* graph)
-	{
-		m_graph = graph;
-	}
 
 	void SetPlayer(Player* player)
 	{
@@ -36,7 +32,7 @@ protected:
 	Vector2 m_target;
 	Player* m_player;
 	ChaseBehaviour* m_chasePlayerBehaviour;
-	Graph2D* m_graph;
+
 
 private:
 	Image PGuardImg;

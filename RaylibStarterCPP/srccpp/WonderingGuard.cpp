@@ -1,11 +1,12 @@
 #include "WonderBehaviour.h"
 #include "WonderingGuard.h"
-#include "FollowPathBehaviour.h"
+#include "ChaseBehaviour.h"
 #include <iostream>
+#include "Player.h"
 
-WonderingGuard::WonderingGuard()
+WonderingGuard::WonderingGuard(Application* app) : GameObject(app)
 {
-	m_followPathBehaviour = new FollowPathBehaviour();
+	m_chaseBehaviour = new ChaseBehaviour();
 	m_wonderBehaviour = new WonderBehaviour();
 
 	SetBehaviour(m_wonderBehaviour);
@@ -19,15 +20,26 @@ WonderingGuard::WonderingGuard()
 WonderingGuard::~WonderingGuard()
 {
 	SetBehaviour(nullptr);
+	m_wonderBehaviour = nullptr;
+	m_chaseBehaviour = nullptr;
 
 	delete m_wonderBehaviour;
-	delete m_followPathBehaviour;
+	delete m_chaseBehaviour;
 }
 
 void WonderingGuard::Update(float deltaTime)
 {
-	//You can insert any sort of logic that relates to the player
-	SetBehaviour(m_wonderBehaviour);
+	float distToTarget = Vector2Distance(GetPosition(), m_player->GetPosition());
+	if (distToTarget < m_guardRadius)
+	{
+		m_chaseBehaviour->SetTarget(m_player->GetPosition());
+		SetBehaviour(m_chaseBehaviour);
+	}
+	else
+	{
+		//You can insert any sort of logic that relates to the player
+		SetBehaviour(m_wonderBehaviour);
+	}
 
 
 	GameObject::Update(deltaTime);

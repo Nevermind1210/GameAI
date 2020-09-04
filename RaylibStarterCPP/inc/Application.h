@@ -18,6 +18,7 @@ public:
 	virtual void Load();
 	virtual void Unload();
 
+	Graph2D* GetGraph() { return m_graph;  }
 	
 protected:
 private:

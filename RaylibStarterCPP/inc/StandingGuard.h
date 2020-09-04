@@ -11,7 +11,7 @@ class Graph2D;
 class StandingGuard : public GameObject  
 {
 public:
-	StandingGuard();
+	StandingGuard(Application* app);
 	virtual ~StandingGuard();
 
 	virtual void Update(float deltaTime);

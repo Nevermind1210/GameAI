@@ -1,0 +1,10 @@
+﻿  PatrollingGuard.cpp
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\PatrollingGuard.cpp(62,43): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\PatrollingGuard.cpp(62,26): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\PatrollingGuard.cpp(64,74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\PatrollingGuard.cpp(64,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\PatrollingGuard.cpp(67,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\PatrollingGuard.cpp(67,16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\PatrollingGuard.cpp(66,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s200501\source\repos\GameAI\RaylibStarterCPP\srccpp\PatrollingGuard.cpp(66,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  RaylibStarterCPP.vcxproj -> C:\Users\s200501\source\repos\GameAI\bin\Win32\Debug\GameAI.exe

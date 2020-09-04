@@ -8,7 +8,7 @@ class Graph2D;
 class Player : public GameObject
 {
 public: 
-	Player();
+	Player(Application* app);
 	virtual ~Player();
 
 	virtual void Update(float deltaTime);

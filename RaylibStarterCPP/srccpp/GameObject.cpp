@@ -1,8 +1,9 @@
 #include "GameObject.h"
 #include "Behaviour.h"
 
-GameObject::GameObject()
+GameObject::GameObject(Application* app)
 {
+	m_app = app;
 }
 
 GameObject::~GameObject()
@@ -85,4 +86,9 @@ void GameObject::ApplyForce(const Vector2& force)
 void GameObject::SetBehaviour(Behaviour* behaviour)
 {
 	m_behaviour = behaviour;
+}
+
+Application* GameObject::GetApp()
+{
+	return m_app;
 }

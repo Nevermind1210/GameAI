@@ -10,16 +10,12 @@ class ChaseBehaviour;
 class PatrollingGuard : public GameObject
 {
 public:
-	PatrollingGuard();
+	PatrollingGuard(Application* app);
 	virtual ~PatrollingGuard();
 
 	virtual void Update(float deltaTime);
 	virtual void Draw();
 
-	void SetGraph(Graph2D* graph)
-	{
-		m_graph = graph;
-	}
 
 	void SetPlayer(Player* player)
 	{
@@ -39,9 +35,6 @@ protected:
 	Player* m_player;
 	ChaseBehaviour* m_chasePlayerBehaviour;
 	FollowPathBehaviour* m_followPathBehaviourHCP;
-
-	Graph2D* m_graph;
-
 
 
 private:

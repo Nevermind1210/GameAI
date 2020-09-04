@@ -3,9 +3,10 @@
 #include "Player.h"
 #include "Graph2D.h"
 #include <iostream>
+#include "Application.h"
 #include "raylib.h"
 
-StandingGuard::StandingGuard() : GameObject()
+StandingGuard::StandingGuard(Application* app) : GameObject(app)
 {
 	m_followPathBehaviour = new FollowPathBehaviour();
 	m_followPathBehaviour->SetTargetRadius(20);
@@ -18,6 +19,7 @@ StandingGuard::StandingGuard() : GameObject()
 StandingGuard::~StandingGuard()
 {
 	SetBehaviour(nullptr);
+	m_followPathBehaviour = nullptr;
 
 	delete m_followPathBehaviour;
 }
@@ -26,48 +28,29 @@ void StandingGuard::Update(float deltaTime)
 {
 	//You can insert any sort of logic that relates to the player/agent
 	float distToTarget = Vector2Distance(GetPosition(), m_player->GetPosition());
-
+	auto graph = GetApp()->GetGraph();
 	if(distToTarget < GuardRadius)
 	{	
 		//This collects the data of the Guard
 		std::vector<Graph2D::Node*>GuardNode;
-		m_graph->GetNearbyNodes(GetPosition(), 40, GuardNode); // Grabs itself
+		graph->GetNearbyNodes(GetPosition(), 40, GuardNode); // Grabs itself
 		std::vector<Graph2D::Node*>PlayerNode;
-		m_graph->GetNearbyNodes(m_player->GetPosition(), 40, PlayerNode); //Grabs player info
+		graph->GetNearbyNodes(m_player->GetPosition(), 40, PlayerNode); //Grabs player info
 		std::list<Graph2D::Node*>PathFound;
-		m_graph->FindPathAStar(GuardNode[0], PlayerNode[0], PathFound); // combine it
+		graph->FindPathAStar(GuardNode[0], PlayerNode[0], PathFound); // combine it
 
 		std::vector<Vector2>FinalDes; // The combination.
 
-		for(auto node: PathFound) // comparing
+		for (auto node : PathFound) // comparing
 		{
 			FinalDes.push_back(node->data); // and pushing the nodes 
 		}
 		m_followPathBehaviour->SetPath(FinalDes); // and volia it follows the player
-		SetBehaviour(m_followPathBehaviour);		
+		SetBehaviour(m_followPathBehaviour);
 	}
 	else
 	{
-		std::vector<Graph2D::Node*>GuardNode;
-		m_graph->GetNearbyNodes(GetPosition(), 40, GuardNode);
-		std::vector<Graph2D::Node*>PlayerNode;
-		m_graph->GetNearbyNodes({ GetScreenWidth() * 0.45f , GetScreenHeight() / 2.0f }, 40, PlayerNode);
-		std::list<Graph2D::Node*>PathFound;
-		m_graph->FindPathAStar(GuardNode[0], PlayerNode[0], PathFound);
-
-		std::vector<Vector2>FinalDes;
-
-		for (auto node : PathFound)
-		{
-			FinalDes.push_back(node->data);
-		}
-		m_followPathBehaviour->SetPath(FinalDes);
-		SetBehaviour(m_followPathBehaviour);
-
-		if (distToTarget == distToTarget)
-		{
-			SetBehaviour(nullptr);
-		}
+		SetBehaviour(nullptr);
 	}
 
 	//this logic to be agent awaiting player to hit a certain range and once reached range is to chase(seek)

@@ -4,11 +4,12 @@
 
 class Behaviour;
 class Player;
+class Application;
 
 class GameObject
 {
 public:
-	GameObject();
+	GameObject(Application *app);
 	virtual ~GameObject();
 
 	virtual void Update(float deltaTime);
@@ -30,6 +31,8 @@ public:
 
 	void SetBehaviour(Behaviour* behaviour);
 
+	Application* GetApp();
+
 
 protected:
 
@@ -40,6 +43,8 @@ protected:
 
 	Player* m_player;
 	Behaviour* m_behaviour = nullptr;
+
+	Application* m_app;
 
 private:
 };

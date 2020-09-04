@@ -5,8 +5,9 @@
 #include "Player.h"
 #include "Graph2D.h"
 #include "ChaseBehaviour.h"
+#include "Application.h"
 
-PatrollingGuard::PatrollingGuard()
+PatrollingGuard::PatrollingGuard(Application* app) : GameObject(app)
 {
 	m_followPathBehaviourHCP = new FollowPathBehaviour();
 	m_chasePlayerBehaviour = new ChaseBehaviour();
@@ -34,11 +35,8 @@ void PatrollingGuard::Update(float deltaTime)
 	float distToTarget = Vector2Distance(GetPosition(), m_player->GetPosition());
 	if (distToTarget < GuardRadius)
 	{
-		if (GetBehaviour() != m_chasePlayerBehaviour)
-		{
-			m_chasePlayerBehaviour->SetTarget(m_player);
-			SetBehaviour(m_chasePlayerBehaviour);
-		}
+		m_chasePlayerBehaviour->SetTarget(m_player->GetPosition());
+		SetBehaviour(m_chasePlayerBehaviour);
 	}
 	else
 	{

@@ -57,30 +57,28 @@ void Application::Load()
 	m_graph = new Graph2D();
 
 	//Loading All Player related stuff
-	auto player = new Player();
+	auto player = new Player(this);
 	player->SetPosition({ m_windowWidth * 0.25f , m_windowHeight / 2.0f });
 	player->SetFriction(1.0f);
 	m_player1 = player;
 
 	//Loading All Standing Guard Stuff
-	auto Sguard = new StandingGuard();
-	Sguard = new StandingGuard();
+	auto Sguard = new StandingGuard(this);
+	Sguard = new StandingGuard(this);
 	Sguard->SetPlayer(player);
-	Sguard->SetGraph(m_graph);
 	Sguard->SetPosition({ m_windowWidth * 0.45f , m_windowHeight / 2.0f });
 	Sguard->SetFriction(1.0f);
 	m_standingGuard = Sguard;
 
 	//Loading All Patrolling Guard Stuff
-	auto Pguard = new PatrollingGuard();
+	auto Pguard = new PatrollingGuard(this);
 	Pguard->SetPlayer(player);
-	Pguard->SetGraph(m_graph);
 	Pguard->SetPosition({ m_windowWidth * 0.65f , m_windowHeight / 2.0f });
 	Pguard->SetFriction(1.0f);
 	m_patrollingGuard = Pguard;
 
 	//Loading All Wondering Guard Stuff
-	auto WGuard = new WonderingGuard();
+	auto WGuard = new WonderingGuard(this);
 	WGuard->SetPosition({ m_windowWidth * 0.95f , m_windowHeight / 5.0f });
 	WGuard->SetFriction(1.0f);
 	m_wonderingGuard = WGuard;
