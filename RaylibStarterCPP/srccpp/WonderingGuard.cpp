@@ -9,7 +9,7 @@ WonderingGuard::WonderingGuard(Application* app) : GameObject(app)
 	m_chaseBehaviour = new ChaseBehaviour();
 	m_wonderBehaviour = new WonderBehaviour();
 
-	SetBehaviour(m_wonderBehaviour);
+	//SetBehaviour(m_wonderBehaviour);
 	
 	//Setting up the images.
 	WGuardImg = LoadImage("../Sprites/WGuard.png");
@@ -51,7 +51,8 @@ void WonderingGuard::Draw()
 	m_behaviour->Draw(this);
 	//Debug draw
 	Vector2 targetHeading = Vector2Add(m_position, m_velocity);
-
+	//Draws line of sight
+	DrawCircle(GetPosition().x, GetPosition().y, 200, { 255,215,68,100 });
 	//Drawing the WGuard Texture!
 	DrawTexture(WGuardTex, m_position.x - WGuardTex.width / 2, m_position.y - WGuardTex.width / 2, GREEN);
 

@@ -79,6 +79,7 @@ void Application::Load()
 
 	//Loading All Wondering Guard Stuff
 	auto WGuard = new WonderingGuard(this);
+	WGuard->SetPlayer(player);
 	WGuard->SetPosition({ m_windowWidth * 0.95f , m_windowHeight / 5.0f });
 	WGuard->SetFriction(1.0f);
 	m_wonderingGuard = WGuard;
